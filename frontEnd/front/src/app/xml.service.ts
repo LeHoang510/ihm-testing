@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class XmlService {
 
-
+//really small portion of the original xml
   xml: string = `
   
   <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
