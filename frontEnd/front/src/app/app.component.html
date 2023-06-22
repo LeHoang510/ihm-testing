@@ -1,0 +1,83 @@
+<div class="test">Hydro</div>
+<br><br>
+
+<p-table [value]="parameters">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Value</th>
+            <th>Default value</th>
+            <th>Possible values</th>
+                <th>Rules</th>
+            <th>Description</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-parameters>
+        <tr>
+            <td>{{ parameters.name }}</td>
+            <td>{{ parameters.type }}</td>
+            <td>{{ parameters.value }}</td>
+            <td>{{ parameters.default_value }}</td>
+            <td>{{ parameters.possible_values }}</td>
+            <td>X</td>
+            <td>{{ parameters.description }}</td>
+
+
+        </tr>
+    </ng-template>
+<p-table/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div>
+    "Nom du paramètre 1 à changer"
+    <select name="listeD1">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+    </select>
+
+
+    <br><br><br>
+
+    "Nom du paramètre 2 à changer"
+    <select name = "listeD2">
+        <optgroup label="Int">
+            <option value="option1.1">Option 1</option>
+            <option value="option1.2">Option 2</option>
+        </optgroup>
+        <optgroup label="String">
+            <option value="option2.1">Option 1</option>
+            <option value="option2.2">Option 2</option>
+            <option value="option2.3">Option 3</option>
+        </optgroup>
+    </select>
+
+
+    <br><br><br>
+
+
+    "Nom du paramètre 3 à changer"
+    <select name = "listeD3" [(ngModel)]="selectedOption">
+        <option *ngFor="let value of possibleValues" value="{{ value }}">{{ value }}</option>
+    </select>
+    <br>
+    <button (click)="changeParameter()">Change parameter</button>
+
+</div> -->

@@ -18,7 +18,7 @@ export class XmlService {
         <ParametersGroup name="windows_1">
           <Parameter name="box">
             <description>description of the box</description>
-            <possible_values>NO; FRAC_2D; FRAC_2D_FLOW; FRAC_3D; FRAC_3D_FLOW; MSFRAC; GRID; POROUS; POROUS_TRACKER</possible_values>
+            <possible_values>NO; FRAC_2D, FRAC_2D_FLOW; FRAC_3D; FRAC_3D_FLOW; MSFRAC; GRID; POROUS; POROUS_TRACKER</possible_values>
             <type>string</type>
             <value>NO</value>
             <default_value>NO</default_value>
@@ -38,5 +38,56 @@ export class XmlService {
   `;
 
 
+  xml2 = `
+  <?xml version="1.0" encoding="UTF-8"?>
+<!-- Jean-Raynald de Dreuzy (Géosciences Rennes) -->
+<!DOCTYPE ParametersGroup SYSTEM "../../reference_params_scheme.dtd">
+
+<ParametersGroup name="forecast">
+	<Parameter name="forecast_site">
+		<description>Name of the watershed for which we would like to forecast the seasonal streamflow.</description>
+		<type>string</type>
+		<possible_values>truc1;machin1;machin2;truc2</possible_values>
+		<value/>
+		<default_value>forecast_site.csv</default_value>
+	</Parameter>
+	<Parameter name="obs_events">
+		<description>Database of historical records encompassing hydrological, climatic, and geological data from various regional watersheds.</description>
+		<type>string</type>
+		<possible_values/>
+		<value/>
+		<default_value>regional_object</default_value>
+	</Parameter>
+	<Parameter name="indicator">
+		<description>Indicator's name used for calculating the similarity between two time series events</description>
+		<type>string</type>
+		<possible_values/>
+		<value/>
+		<default_value>Pearson's</default_value>
+	</Parameter>
+	<Parameter name="period">
+		<description>Forecast horizon (can be one week, two weeks or a month for example).</description>
+		<type>string</type>
+		<possible_values/>
+		<value/>
+		<default_value>Week1</default_value>
+	</Parameter>
+	<Parameter name="variable">
+		<description>Name of the variable for which we aim to compute the similarity.</description>
+		<type>string</type>
+		<possible_values/>
+		<value/>
+		<default_value>specific_discharge</default_value>
+	</Parameter>
+	<Parameter name="time_step">
+		<description>Step duration of the variable (can be daily 'D', weekly 'W' or monthly 'M').</description>
+		<type>string</type>
+		<possible_values/>
+		<value/>
+		<default_value>D</default_value>
+	</Parameter>
+</ParametersGroup>
+
+  `;
   constructor() { }
 }
