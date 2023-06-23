@@ -1,11 +1,11 @@
 export interface ParametersGroup {
-    name: string,
+    name: Array<string>,
     parameters?: Array<Parameter>,  
     pg?: Array<ParametersGroup>
 }
 
 export interface Parameter{
-    // name: string,
+    name: Array<string>,
     description: Array<string>,
     possible_values: Array<string>
     type: Array<string>,

@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
+import { TreeTableModule } from 'primeng/treetable';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { TableModule } from 'primeng/table';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    TableModule
+    TableModule,
+    TreeTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

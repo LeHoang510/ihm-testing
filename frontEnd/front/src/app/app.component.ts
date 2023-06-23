@@ -5,7 +5,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DataService } from './service/data.service';
-import { TableModule } from 'primeng/table';
 import { Parameter, ParametersGroup } from './model/parameters-group';
 
 
@@ -18,16 +17,22 @@ import { Parameter, ParametersGroup } from './model/parameters-group';
 export class AppComponent implements OnInit{
   title = 'front';
 
-  xml: ParametersGroup;
 
   parameters: Array<Parameter>;
 
   constructor(private service: DataService, /*private http: HttpClient*/) {
-    this.xml = this.service.data;
-    this.parameters = this.service.allFlatParam3(this.xml);
+    this.parameters = this.service.allFlatParam(this.service.data);
     // console.log(this.parameters);
+
+    //empty (because of promise)
+    console.log(this.service.data);
   }
 
   ngOnInit(): void {
+  }
+
+  print(){
+    //filled (promise finished)
+    console.log(this.service.data);
   }
 }

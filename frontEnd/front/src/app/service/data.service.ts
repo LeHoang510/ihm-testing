@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Parameter, ParametersGroup } from '../model/parameters-group';
 import { flatMap } from 'rxjs';
-import * as xml2js from 'xml2js';
+import {Parser} from 'xml2js';
 
 
 @Injectable({
@@ -129,30 +129,54 @@ export class DataService {
   //   </ParametersGroup>
   // </ParametersGroup>
   // `
+  this.data = {
+    name: ["Empty data"],
+    parameters: []
+ }
 
-  this.data = { name:""}
-  xml2js.parseString(this.xmlData, (err, result) => {
-    if (err) {
-      console.error('Une erreur s\'est produite lors de l\'analyse du XML :', err);
-    } else {
-			this.data = result;
-      console.log(this.data);
-    }})
+  this.parseXml(this.xmlData)
+  .then((res: any) => {
+    this.data = res.ParametersGroup as ParametersGroup;
+    // console.log(this.data);
+    // console.log(this.data.name);
+    // if(this.data.parameters)
+    // console.log(this.data.parameters[0]);
+  });
 
-    
   
-
-    
   }
   
+  renameTags(v: string): string {
+    switch(v) {
+      case "Parameter":
+        return "parameters";
+    }
 
-  allFlatParam3(file: ParametersGroup): Array<Parameter> {
+    return v;
+  }
+
+  async parseXml(xmlString: string) {
+    const parser = new Parser({
+      "trim": true,
+      "mergeAttrs": true,
+      tagNameProcessors: [this.renameTags],
+    });
+    return await new Promise((resolve, reject) => parser.parseString(xmlString, (err: any, jsonData: any) => {
+      if (err) {
+        reject(err);
+      }
+      resolve(jsonData);
+    }));
+  }
+
+
+  allFlatParam(file: ParametersGroup): Array<Parameter> {
     if (file) {
       if (file.pg) {
         if (file.parameters) {
-          return [...file.parameters, ...file.pg.flatMap(pg2 => this.allFlatParam3(pg2))];
+          return [...file.parameters, ...file.pg.flatMap(pg2 => this.allFlatParam(pg2))];
         } else {
-          return file.pg.flatMap(pg2 => this.allFlatParam3(pg2));
+          return file.pg.flatMap(pg2 => this.allFlatParam(pg2));
         }
       } else if (file.parameters) {
         return file.parameters;
