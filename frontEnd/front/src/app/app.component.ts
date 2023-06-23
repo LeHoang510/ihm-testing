@@ -3,7 +3,6 @@
 // primeng v16.0.0
 
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { DataService } from './service/data.service';
 import { Parameter, ParametersGroup } from './model/parameters-group';
 
@@ -17,12 +16,13 @@ import { Parameter, ParametersGroup } from './model/parameters-group';
 export class AppComponent implements OnInit{
   title = 'front';
 
+  // xml: ParametersGroup;
 
   parameters: Array<Parameter>;
 
-  constructor(private service: DataService, /*private http: HttpClient*/) {
-    this.parameters = this.service.allFlatParam(this.service.data);
-    // console.log(this.parameters);
+  constructor(private service: DataService) {
+    // this.xml = this.service.data;
+    this.parameters = [];
 
     //empty (because of promise)
     console.log(this.service.data);
@@ -31,8 +31,19 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
   }
 
+  load(){
+    // this.xml = this.service.data;
+    this.parameters = this.service.allFlatParam(this.service.data);
+    console.log(this.parameters);
+    if(this.service.data.parameters)
+    this.parameters = this.service.data.parameters;
+  }
+
   print(){
     //filled (promise finished)
-    console.log(this.service.data);
+    // console.log(this.service.data);
+    if (this.service.data.ParametersGroup){
+      console.log(this.service.data.ParametersGroup[0])
+    }
   }
 }
