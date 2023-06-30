@@ -6584,7 +6584,15 @@ export class DataService {
 			</ParametersGroup>
 		</ParametersGroup>
 	</ParametersGroup>
+	<Parameter name="test">
+		<description>limit testing</description>
+		<possible_values/>
+		<type>string</type>
+		<value>UNIFORM</value>
+		<default_value>UNIFORM</default_value>
+</Parameter>
 </ParametersGroup>
+
 
 `;
 
@@ -6628,7 +6636,6 @@ export class DataService {
     // if(this.data.parameters)
     // console.log(this.data.parameters[0]);
   });
-
   
   }
   
@@ -6637,7 +6644,6 @@ export class DataService {
       case "Parameter":
         return "parameters";
     }
-
     return v;
   }
 
@@ -6656,19 +6662,19 @@ export class DataService {
   }
 
 
-  allFlatParam(file: ParametersGroup): Array<Parameter> {
-    if (file) {
-      if (file.ParametersGroup) {
-        if (file.parameters) {
-          return [...file.parameters, ...file.ParametersGroup.flatMap(pg => this.allFlatParam(pg))];
-        } else {
-          return file.ParametersGroup.flatMap(pg => this.allFlatParam(pg));
-        }
-      } else if (file.parameters) {
-        return file.parameters;
-      }
-    }
-    return [];
-  }
+//   allFlatParam(file: ParametersGroup): Array<Parameter> {
+//     if (file) {
+//       if (file.ParametersGroup) {
+//         if (file.parameters) {
+//           return [...file.parameters, ...file.ParametersGroup.flatMap(pg => this.allFlatParam(pg))];
+//         } else {
+//           return file.ParametersGroup.flatMap(pg => this.allFlatParam(pg));
+//         }
+//       } else if (file.parameters) {
+//         return file.parameters;
+//       }
+//     }
+//     return [];
+//   }
 
 }

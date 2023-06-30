@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
 import { TreeTableModule } from 'primeng/treetable';
+import { ButtonModule } from 'primeng/button';
+
 
 
 @NgModule({
@@ -19,6 +21,7 @@ import { TreeTableModule } from 'primeng/treetable';
     AppRoutingModule,
     FormsModule,
     TableModule,
+    ButtonModule,
     TreeTableModule
   ],
   providers: [],
