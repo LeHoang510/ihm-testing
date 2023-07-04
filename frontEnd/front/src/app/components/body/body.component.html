@@ -10,8 +10,8 @@
             <td>{{ parameter.name }}</td>
             <td>{{ parameter.type }}</td>
             <td>
-                <input type="text">
-                <button>change parameter</button>
+                <input type="submit" value="Modify parameter" />
+
             </td>
             <td>{{ parameter.default_value }}</td>
             <td>{{ parameter.possible_values }}</td>   
@@ -33,12 +33,13 @@
     <ng-template pTemplate="rowexpansion" let-parameter> <!-- contenu quand on appuie sur le bouton pour le deroulement -->
         <tr>
             <td colspan="7">
-                            <tr *ngIf="existParamGroup(parameter)"> <!-- on verifie si la variable a un parameterGroups -->
-                                <app-body [parameters]="parameter.ParametersGroup"></app-body> <!-- on rappelle le composant avec le parameterGroup -->
-                            </tr>
-                            <tr *ngIf="existParam(parameter)"> <!-- on verifie si la variable a un parameter -->
-                                <app-body [parameters]="parameter.parameters"></app-body> <!-- on rappelle le composant avec le parameter -->
-                            </tr>                    
+                <tr *ngIf="existParam(parameter)"> <!-- on verifie si la variable a un parameter -->
+                    <app-body [parameters]="parameter.parameters"></app-body> <!-- on rappelle le composant avec le parameter -->
+                </tr> 
+                <tr *ngIf="existParamGroup(parameter)"> <!-- on verifie si la variable a un parameterGroups -->
+                    <app-body [parameters]="parameter.ParametersGroup"></app-body> <!-- on rappelle le composant avec le parameterGroup -->
+                </tr>
+                                               
     </ng-template>
 
 

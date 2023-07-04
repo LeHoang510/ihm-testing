@@ -39,6 +39,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "xml2js"
+            ],
             "outputPath": "dist/front",
             "index": "src/index.html",
             "main": "src/main.ts",
