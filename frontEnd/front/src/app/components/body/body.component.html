@@ -1,0 +1,45 @@
+<button (click)="load()">load xml</button> 
+<br><br>
+
+
+<p-table [value]="parameters" dataKey="name"> <!-- on prend la variable parameters du ts pour iterer dessus plus tard -->
+    <ng-template  pTemplate="body" let-parameter let-expanded="expanded"> <!-- corps de la table -->
+
+        <!-- **************** traitement pour les Parameter = cas de fin de la recursivite -->
+        <tr *ngIf="isParameter(parameter)">
+            <td>{{ parameter.name }}</td>
+            <td>{{ parameter.type }}</td>
+            <td>
+                <input type="text">
+                <button>change parameter</button>
+            </td>
+            <td>{{ parameter.default_value }}</td>
+            <td>{{ parameter.possible_values }}</td>   
+            <td>X</td>
+            <td>{{ parameter.description }}</td>
+        </tr>
+
+
+
+        <!-- **************** traitement pour les ParametersGroup = cas de recursivite -->
+        <tr *ngIf="!isParameter(parameter)">
+            <td colspan="5">
+                <button type="button" pButton pRipple [pRowToggler]="parameter" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button> <!-- bouton de deroulement -->
+                <!-- class="p-button-text p-button-rounded p-button-plain mr-2" -->
+                <span>{{ parameter.name }}</span>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="rowexpansion" let-parameter> <!-- contenu quand on appuie sur le bouton pour le deroulement -->
+        <tr>
+            <td colspan="7">
+                            <tr *ngIf="existParamGroup(parameter)"> <!-- on verifie si la variable a un parameterGroups -->
+                                <app-body [parameters]="parameter.ParametersGroup"></app-body> <!-- on rappelle le composant avec le parameterGroup -->
+                            </tr>
+                            <tr *ngIf="existParam(parameter)"> <!-- on verifie si la variable a un parameter -->
+                                <app-body [parameters]="parameter.parameters"></app-body> <!-- on rappelle le composant avec le parameter -->
+                            </tr>                    
+    </ng-template>
+
+
+<p-table/>

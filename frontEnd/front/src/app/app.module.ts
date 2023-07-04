@@ -8,12 +8,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
 import { TreeTableModule } from 'primeng/treetable';
 import { ButtonModule } from 'primeng/button';
+import { HeaderComponent } from './components/header/header.component';
+import { BodyComponent } from './components/body/body.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
+    BodyComponent,
   ],
   imports: [
     BrowserModule,
