@@ -8,8 +8,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
 import { TreeTableModule } from 'primeng/treetable';
 import { ButtonModule } from 'primeng/button';
-import { HeaderComponent } from './components/header/header.component';
-import { BodyComponent } from './components/body/body.component';
+import { HeaderComponent } from './components/xmlView/header/header.component';
+import { BodyComponent } from './components/xmlView/body/body.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { XmlComponent } from './components/xmlView/xml/xml.component';
 
 
 
@@ -18,6 +20,8 @@ import { BodyComponent } from './components/body/body.component';
     AppComponent,
     HeaderComponent,
     BodyComponent,
+    MenuComponent,
+    XmlComponent,
   ],
   imports: [
     BrowserModule,

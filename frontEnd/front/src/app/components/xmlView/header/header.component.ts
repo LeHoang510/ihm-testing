@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DataService } from '../../service/data.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +7,5 @@ import { DataService } from '../../service/data.service';
 })
 export class HeaderComponent {
 
-  constructor(private headerService: DataService){
-  }
   
 }

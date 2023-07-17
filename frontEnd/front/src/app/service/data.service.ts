@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Parameter, ParametersGroup } from '../model/parameters-group';
-import { flatMap } from 'rxjs';
-import {Parser} from 'xml2js';
+import { ParametersGroup } from '../model/parameters-group';
+import { Parser, Builder} from 'xml2js';
+import * as jsXmlParse from 'json-xml-parse';
 
 
 @Injectable({
@@ -9,10 +9,7 @@ import {Parser} from 'xml2js';
 })
 export class DataService {
 
-
-  data: ParametersGroup;
-
-  xmlData: string;
+  private xmlData: string;
 
   constructor() { 
 
@@ -6593,50 +6590,9 @@ export class DataService {
 </Parameter>
 </ParametersGroup>
 
-
 `;
-
-
-
-  //   this.xmlData =  `
-  //   <ParametersGroup name="PARADIS_inputs">
-  //   <ParametersGroup name="run_global">
-  //     <ParametersGroup name="display_options">
-  //       <ParametersGroup name="windows_1">
-  //         <Parameter name="box">
-  //           <description>description of the box</description>
-  //           <possible_values>NO; FRAC_2D, FRAC_2D_FLOW; FRAC_3D; FRAC_3D_FLOW; MSFRAC; GRID; POROUS; POROUS_TRACKER</possible_values>
-  //           <type>string</type>
-  //           <value>NO</value>
-  //           <default_value>NO</default_value>
-  //         </Parameter>
-  //         <Parameter name="function">
-  //           <description>NETWORK_2D</description>
-  //           <possible_values>NO; NETWORK_2D; NETWORK_2D1; NETWORK_2D2 ; FLOW_2D; FLOW_2D1; FLOW_2D2; HEAD_2D</possible_values>
-  //           <type>string</type>
-  //           <value>NO</value>
-  //           <default_value>NO</default_value>
-  //         </Parameter>
-  //       </ParametersGroup>
-  //     </ParametersGroup>
-  //   </ParametersGroup>
-  // </ParametersGroup>
-  // `
   
-  this.data = {
-    name: ["Empty data"],
-    parameters: []
- }
-
-  this.parseXml(this.xmlData)
-  .then((res: any) => {
-    this.data = res.ParametersGroup as ParametersGroup;
-    // console.log(this.data);
-    // console.log(this.data.name);
-    // if(this.data.parameters)
-    // console.log(this.data.parameters[0]);
-  });
-  
+	
   }
   
   renameTags(v: string): string {
@@ -6661,20 +6617,35 @@ export class DataService {
     }));
   }
 
+  public async getJSONData(): Promise<ParametersGroup> {
+	return this.parseXml(this.xmlData)
+	.then((res: any) => {
+	  return res.ParametersGroup as ParametersGroup;
+	});
+  }
 
-//   allFlatParam(file: ParametersGroup): Array<Parameter> {
-//     if (file) {
-//       if (file.ParametersGroup) {
-//         if (file.parameters) {
-//           return [...file.parameters, ...file.ParametersGroup.flatMap(pg => this.allFlatParam(pg))];
-//         } else {
-//           return file.ParametersGroup.flatMap(pg => this.allFlatParam(pg));
-//         }
-//       } else if (file.parameters) {
-//         return file.parameters;
-//       }
-//     }
-//     return [];
-//   }
+  jsonToXml(json:any){
+	const options = {
+		beautify: true,
+		selfClosing: true,
+		attrKey: "name",
+		// attrKey: "name",
+		entityMap: {
+		  '"': "&#34;",
+		  "&": "&#38;"
+		},
+		declaration: {
+		  encoding:'UTF-8',
+		  standalone: 'no'
+		}
+	  }
+	const xml = jsXmlParse.jsXml.toXmlString(options,json);
+	console.log(xml);
+  }
 
+//   jsonToXml(json:any){
+// 	const builder = new Builder();
+// 	const xmlData = builder.buildObject(json);
+// 	console.log(xmlData);
+//   } 
 }

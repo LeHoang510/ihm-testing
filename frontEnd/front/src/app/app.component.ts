@@ -3,7 +3,6 @@
 // primeng v16.0.0
 
 
-// yml equivalent pour installer toutes les librairies necessaires -> pas besoin car toutes les dependances sont mises dans le package.json
 
 import { Component} from '@angular/core';
 
