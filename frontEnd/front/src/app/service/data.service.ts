@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ParametersGroup } from '../model/parameters-group';
-import { Parser, Builder} from 'xml2js';
+import { Parser} from 'xml2js';
 import * as jsXmlParse from 'json-xml-parse';
+import { XmlService } from './xml.service';
 
 
 @Injectable({
@@ -11,7 +12,7 @@ export class DataService {
 
   private xmlData: string;
 
-  constructor() { 
+  constructor(private requestService: XmlService) { 
 
   this.xmlData = `
 
@@ -6628,7 +6629,7 @@ export class DataService {
 	const options = {
 		beautify: true,
 		selfClosing: true,
-		attrKey: "name",
+		attrKey: "name",	
 		// attrKey: "name",
 		entityMap: {
 		  '"': "&#34;",
