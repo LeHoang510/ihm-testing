@@ -8,12 +8,13 @@
 
             <td>
                 <!-- <button (click)="jsonToXml()"> print </button> -->
-                <input type="text" [(ngModel)]="parameter.value"  id="{{parameter.name}}"/> 
+                <input type="text" [ioTextinput] (textinputBinder)="setParamChange($event, parameter)"
+                    [ngModel]="parameter.value"  id="{{parameter.name}}"/>
                 <!-- {{parameter.value}} -->
             </td>
-   
+
             <td>{{ parameter.default_value }}</td>
-            <td>{{ parameter.possible_values }}</td>   
+            <td>{{ parameter.possible_values }}</td>
             <td>X</td>
             <td>{{ parameter.description }}</td>
         </tr>
@@ -23,7 +24,7 @@
         <!-- **************** ParametersGroup case = recursion case -->
         <tr *ngIf="!isParameter(parameter)">
             <td colspan="5">
-                <p-button [pRowToggler]="parameter" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'" styleClass="p-button-outlined p-button-icon-tiny"></p-button> <!-- expand button -->                
+                <p-button [pRowToggler]="parameter" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'" styleClass="p-button-outlined p-button-icon-tiny"></p-button> <!-- expand button -->
                 <span>{{ parameter.name }}</span>
             </td>
         </tr>
@@ -33,11 +34,11 @@
             <td colspan="7">
                 <tr *ngIf="existParam(parameter)"> <!-- we check if it is a parameter -->
                     <app-body [parameters]="parameter.parameters"></app-body> <!-- we callback the component with the parameters of the current element -->
-                </tr> 
+                </tr>
                 <tr *ngIf="existParamGroup(parameter)"> <!-- we check if it is a ParametersGroup -->
                     <app-body [parameters]="parameter.ParametersGroup"></app-body> <!-- we callback the component with the parametersGroup of the current element -->
                 </tr>
-                                               
+
     </ng-template>
 
 
