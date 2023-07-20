@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ParametersGroup } from '../model/parameters-group';
+import { Parameter, ParametersGroup } from '../model/parameters-group';
 import { Parser} from 'xml2js';
 import * as jsXmlParse from 'json-xml-parse';
 import { XmlService } from './xml.service';
@@ -12,7 +12,7 @@ export class DataService {
 
   private xmlData: string;
 
-  constructor(private requestService: XmlService) { 
+  constructor(private requestService: XmlService) {
 
   this.xmlData = `
 
@@ -6592,10 +6592,10 @@ export class DataService {
 </ParametersGroup>
 
 `;
-  
-	
+
+
   }
-  
+
   renameTags(v: string): string {
     switch(v) {
       case "Parameter":
@@ -6622,14 +6622,30 @@ export class DataService {
 	return this.parseXml(this.xmlData)
 	.then((res: any) => {
 	  return res.ParametersGroup as ParametersGroup;
+	})
+	.then(group => {
+		this.setParent(group);
+		return group;
 	});
+  }
+
+  private setParent(param: ParametersGroup | Parameter, parent?: ParametersGroup): void {
+	param.parent = parent;
+	if(!("type" in param)) {
+		param.ParametersGroup?.forEach(g => {
+			this.setParent(g, param);
+		});
+		param.parameters?.forEach(sub => {
+			this.setParent(sub, param);
+		});
+	}
   }
 
   jsonToXml(json:any){
 	const options = {
 		beautify: true,
 		selfClosing: true,
-		attrKey: "name",	
+		attrKey: "name",
 		// attrKey: "name",
 		entityMap: {
 		  '"': "&#34;",
@@ -6648,5 +6664,5 @@ export class DataService {
 // 	const builder = new Builder();
 // 	const xmlData = builder.buildObject(json);
 // 	console.log(xmlData);
-//   } 
+//   }
 }

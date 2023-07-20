@@ -10,3 +10,13 @@ body {
     width: 1rem;
     margin-right: 0.4rem;
 }
+
+/* temp workaround for the history */
+.tree {
+    width: 100% o !important;
+    position: relative !important;
+}
+
+.current-node {
+    background-color: rgb(233, 233, 233) !important;
+}

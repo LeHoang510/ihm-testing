@@ -12,6 +12,7 @@ import { HeaderComponent } from './components/xmlView/header/header.component';
 import { BodyComponent } from './components/xmlView/body/body.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { XmlComponent } from './components/xmlView/xml/xml.component';
+import { InteractoModule } from 'interacto-angular';
 
 
 
@@ -30,7 +31,8 @@ import { XmlComponent } from './components/xmlView/xml/xml.component';
     FormsModule,
     TableModule,
     ButtonModule,
-    TreeTableModule
+    TreeTableModule,
+    InteractoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
