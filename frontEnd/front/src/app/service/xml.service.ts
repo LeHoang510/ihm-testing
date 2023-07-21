@@ -19,6 +19,6 @@ export class XmlService {
   	}
 
 	runSimulation(): Observable<any[]>{
-		return this.http.get<any[]>("osur/run");
+		return this.http.get<any[]>("http://localhost:5000/run_forecast");
   	}
 }

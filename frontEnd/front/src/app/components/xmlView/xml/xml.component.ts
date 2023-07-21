@@ -15,21 +15,29 @@ export class XmlComponent{
 
   parameters: ParametersGroup;
 
-  constructor(private service: DataService, requestService: XmlService){
+  constructor(private service: DataService,private requestService: XmlService){
     this.parameters ={name:[""]};
-    this.service.requestXml();
+    if (this.service.xmlPath !="--Please choose an xml--"){
+      this.service.requestXml();
+    }
   }
 
   parseIntoJson(){
-    this.service.getJSONData()
-    .then(data => {
-      this.parameters = data;
-    });
+    if (this.service.xmlPath !== "--Please choose an xml--"){
+      this.service.getJSONData()
+      .then(data => {
+        this.parameters = data;
+      });
+    }
   }
 
 
   jsonToXml(){
     this.service.jsonToXml(this.parameters);
+  }
+
+  runForecast(){
+    this.requestService.runSimulation();
   }
 
 }
