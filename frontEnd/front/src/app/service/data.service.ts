@@ -10,22 +10,11 @@ import { XmlService } from './xml.service';
 })
 export class DataService {
 
-  private xmlData: string;
+  private xmlData: string = "";
 
   public xmlPath:string = "";
 
   constructor(private requestService: XmlService) {
-
-	this.xmlData = "";
-
-
-	// this.requestService.getXml(this.xmlPath)
-    // .then(xml=>{
-	// 	this.xmlData=xml;
-	// })
-    // .catch(err=>{console.log(err)})
-;
-
 
   }
 

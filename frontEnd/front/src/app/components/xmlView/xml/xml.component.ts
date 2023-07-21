@@ -17,24 +17,18 @@ export class XmlComponent{
 
   constructor(private service: DataService, requestService: XmlService){
     this.parameters ={name:[""]};
-    
+    this.service.requestXml();
   }
-    
- 
 
-load(){
-  this.service.requestXml();  
-}
-
-parseIntoJson(){
-  this.service.getJSONData()
-  .then(data => {
-    this.parameters = data;
-  });
-}
+  parseIntoJson(){
+    this.service.getJSONData()
+    .then(data => {
+      this.parameters = data;
+    });
+  }
 
 
-jsonToXml(){
+  jsonToXml(){
     this.service.jsonToXml(this.parameters);
   }
 
