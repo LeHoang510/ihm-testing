@@ -5,14 +5,16 @@
 
 <select name="xml" id="xml-select">
     <option value="">--Please choose an xml--</option>
-    <option *ngFor="let xml of xmlNames">{{xml}}</option>
+    <option *ngFor="let xml of xmlNames" value="{{xml}}">{{xml}}</option>
 
 </select>
-
-<!-- <li *ngFor="let name of xmlNames">{{ name }}</li> -->
 
 
 <br><br>
 
+<button (click)="sendXmlName()">Go to Xml view</button>
 
-<a routerLink="/xmlView">Vue du xml</a>
+<br><br>
+
+
+<!-- <li *ngFor="let name of xmlNames">{{ name }}</li> -->

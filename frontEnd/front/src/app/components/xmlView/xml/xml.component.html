@@ -1,11 +1,20 @@
 <!-- routerlink intercept the click event to change the route without having to reload the entire app -->
 <a routerLink="/menu">Back to menu</a>
 
+<br><br>
+
+<button (click)="load()">load xml</button>
+<button (click)="parseIntoJson()">parse</button>
+
+
+<br><br>
+
+<button (click)="jsonToXml()">convert</button>
 
 <div class="main">
     <div class="float-table">
         <app-header></app-header>
-        <button (click)="jsonToXml()">convert</button>
+        
 
         <app-body [parameters] = "[parameters]"></app-body>
     </div>

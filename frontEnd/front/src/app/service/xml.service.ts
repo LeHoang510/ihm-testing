@@ -14,8 +14,8 @@ export class XmlService {
 		return lastValueFrom(this.http.get<Array<string>>("http://localhost:5000/getxmlnames"));
 	}
 
-	getXml(): Promise<any>{
-		return lastValueFrom(this.http.get<any>("http://localhost:5000/getxml"));
+	getXml(xmlName:String):Promise<string> {
+		return lastValueFrom(this.http.get("http://localhost:5000/getxml/" + xmlName,{ responseType: 'text' }));
   	}
 
 	runSimulation(): Observable<any[]>{

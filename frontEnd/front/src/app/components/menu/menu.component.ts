@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from 'src/app/service/data.service';
 import { XmlService } from 'src/app/service/xml.service';
 
 @Component({
@@ -6,25 +8,23 @@ import { XmlService } from 'src/app/service/xml.service';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
-export class MenuComponent implements OnInit{
+export class MenuComponent {
 
   xmlNames:string [];
-  constructor(private requestService: XmlService){
+  constructor(private requestService: XmlService, private data: DataService, private router: Router){
     this.xmlNames = [];
     this.requestService.getXmlNames()
     .then(names => {
       this.xmlNames = names;
     })
     .catch(err => { console.log(err) })
-
-    this.requestService.getXml()
-    .then(xml=>{
-      console.log(xml);
-    })
-    .catch(err=>{console.log(err)})
   }
 
-  ngOnInit(): void {
-    
+  sendXmlName(){
+    const e = document.getElementById("xml-select") as HTMLSelectElement;
+      console.log(e.options[e.selectedIndex].text); 
+      this.data.xmlPath = e.options[e.selectedIndex].text;
+      this.router.navigateByUrl("/xmlView");
   }
+
 }
