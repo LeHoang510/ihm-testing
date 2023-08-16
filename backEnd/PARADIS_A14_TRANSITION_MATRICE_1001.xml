@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet type="text/xsl" href="browser_view.xslt"?>
+<?xmlspysps authentic_view.sps?>
+<ParametersGroup name="PARADIS_inputs">
+
+  <ParametersGroup name="run_global">
+    <ParametersGroup name="display_options">
+      <ParametersGroup name="windows_1">
+        <Parameter name="box">
+          <description>description of the box</description>
+          <possible_values>NO; FRAC_2D; FRAC_2D_FLOW; FRAC_3D; FRAC_3D_FLOW; MSFRAC; GRID; POROUS; POROUS_TRACKER</possible_values>
+          <type>string</type>
+          <value>NO</value>
+          <default_value>NO</default_value>
+        </Parameter>
+        <Parameter name="function">
+          <description>with FRAC2D : NETWORK_2D, FLOW_2D, FLOW_2D1, FLOW_2D2, HEAD_2D, HEAD_2D1, HEAD_2D2, Ht, Ht_scale, Ht_simple</description>
+          <possible_values>NO; NETWORK_2D; NETWORK_2D1; NETWORK_2D2 ; FLOW_2D; FLOW_2D1; FLOW_2D2; HEAD_2D; HEAD_2D1; HEAD_2D2; Ht; Ht_scale; Ht_simple</possible_values>
+          <type>string</type>
+          <value>NO</value>
+          <default_value>NO</default_value>
+        </Parameter>
+      </ParametersGroup>
+    </ParametersGroup>
+  </ParametersGroup>
+
+</ParametersGroup>

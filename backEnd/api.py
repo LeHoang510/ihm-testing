@@ -1,0 +1,36 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Jul 17 15:35:15 2023
+
+@author: nicol
+"""
+
+import flask
+from flask_cors import CORS, cross_origin
+
+
+app = flask.Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
+
+
+@app.route('/getxmlnames', methods=['GET'])
+@cross_origin()
+def home():
+    return flask.jsonify(["cydre_inputs", "PARADIS_inputs"])
+
+@app.route('/getxml/PARADIS_inputs', methods=['GET'])
+@cross_origin()
+def paradis():
+    xmlPath="PARADIS_A14_TRANSITION_MATRICE_1000.xml"
+    return flask.send_file(xmlPath, mimetype='application/xml')
+
+@app.route('/getxml/cydre_inputs', methods=['GET'])
+@cross_origin()
+def cydre():
+    xmlPath="cydre_params.xml"
+    return flask.send_file(xmlPath, mimetype='application/xml')
+
+if __name__ == '__main__':
+    app.run()
