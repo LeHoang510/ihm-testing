@@ -1,27 +1,62 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<?xml-stylesheet type="text/xsl" href="browser_view.xslt"?>
-<?xmlspysps authentic_view.sps?>
-<ParametersGroup name="PARADIS_inputs">
-
-  <ParametersGroup name="run_global">
-    <ParametersGroup name="display_options">
-      <ParametersGroup name="windows_1">
-        <Parameter name="box">
-          <description>description of the box</description>
-          <possible_values>NO; FRAC_2D; FRAC_2D_FLOW; FRAC_3D; FRAC_3D_FLOW; MSFRAC; GRID; POROUS; POROUS_TRACKER</possible_values>
-          <type>string</type>
-          <value>NO</value>
-          <default_value>NO</default_value>
-        </Parameter>
-        <Parameter name="function">
-          <description>with FRAC2D : NETWORK_2D, FLOW_2D, FLOW_2D1, FLOW_2D2, HEAD_2D, HEAD_2D1, HEAD_2D2, Ht, Ht_scale, Ht_simple</description>
-          <possible_values>NO; NETWORK_2D; NETWORK_2D1; NETWORK_2D2 ; FLOW_2D; FLOW_2D1; FLOW_2D2; HEAD_2D; HEAD_2D1; HEAD_2D2; Ht; Ht_scale; Ht_simple</possible_values>
-          <type>string</type>
-          <value>NO</value>
-          <default_value>NO</default_value>
-        </Parameter>
-      </ParametersGroup>
-    </ParametersGroup>
-  </ParametersGroup>
-
+<ParametersGroup name="Cydre_inputs">
+	<ParametersGroup name="forecast">
+		<Parameter name="watershed_target_name">
+			<description>Name of the watershed for which we wish to predict the seasonal streamflow.</description>
+			<type>string</type>
+			<possible_values/>
+			<value/>
+			<default_value>J0014010</default_value>
+		</Parameter>
+		<Parameter name="watersheds">
+			<description>Name of the regional database file encompassing hydrological, climatic, and geological data from various watersheds.</description>
+			<type>string</type>
+			<possible_values/>
+			<value/>
+			<default_value>regional_object</default_value>
+		</Parameter>
+		<Parameter name="indicator">
+			<description>Indicator's name used for calculating the similarity between two time series events</description>
+			<type>string</type>
+			<possible_values/>
+			<value/>
+			<default_value>Pearson's</default_value>
+		</Parameter>
+		<Parameter name="variable">
+			<description>Name of the variable for which we aim to compute the similarity.</description>
+			<type>string</type>
+			<possible_values>specific_discharge; recharge; runoff</possible_values>
+			<value/>
+			<default_value>specific_discharge</default_value>
+		</Parameter>
+	</ParametersGroup>
+	<ParametersGroup name="time">
+		<Parameter name="similarity_period">
+			<description>Similarity period calculation between two timeseries.</description>
+			<type>string</type>
+			<possible_values>period; ndays</possible_values>
+			<value/>
+			<default_value>ndays</default_value>
+		</Parameter>
+		<Parameter name="ndays_before_forecast">
+			<description>Number of days before the forescast day (or current date).</description>
+			<type>int</type>
+			<possible_values>period; ndays</possible_values>
+			<value/>
+			<default_value>90</default_value>
+		</Parameter>
+		<Parameter name="forecast_horizon">
+			<description>Forecast horizon in days.</description>
+			<type>int</type>
+			<possible_values/>
+			<value/>
+			<default_value>30</default_value>
+		</Parameter>
+		<Parameter name="time_step">
+			<description>Variable time step (can be daily 'D', weekly 'W' or monthly 'M').</description>
+			<type>string</type>
+			<possible_values>D; W; M</possible_values>
+			<value/>
+			<default_value>D</default_value>
+		</Parameter>
+	</ParametersGroup>
 </ParametersGroup>
