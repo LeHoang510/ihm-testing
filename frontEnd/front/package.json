@@ -47,6 +47,7 @@
     "@types/node": "^20.3.1",
     "@types/xml-js": "^1.0.0",
     "@types/xml2js": "^0.4.11",
+    "@types/xml2json": "^0.11.4",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

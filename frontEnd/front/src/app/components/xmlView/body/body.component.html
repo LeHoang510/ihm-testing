@@ -7,9 +7,9 @@
             <td>{{ parameter.type }}</td>
 
             <td>
-                <!-- <button (click)="jsonToXml()"> print </button> -->
-                <input type="text" [ioTextinput] (textinputBinder)="setParamChange($event, parameter)"
-                    [ngModel]="parameter.value"  id="{{parameter.name}}"/>
+                <!-- [ioTextinput] (textinputBinder)="setParamChange($event, parameter)" -->
+                <input type="text" 
+                    [(ngModel)]="parameter.value"  id="{{parameter.name}}"/>
                 <!-- {{parameter.value}} -->
             </td>
 
@@ -33,7 +33,7 @@
         <tr>
             <td colspan="7">
                 <tr *ngIf="existParam(parameter)"> <!-- we check if it is a parameter -->
-                    <app-body [parameters]="parameter.parameters"></app-body> <!-- we callback the component with the parameters of the current element -->
+                    <app-body [parameters]="parameter.Parameter"></app-body> <!-- we callback the component with the parameters of the current element -->
                 </tr>
                 <tr *ngIf="existParamGroup(parameter)"> <!-- we check if it is a ParametersGroup -->
                     <app-body [parameters]="parameter.ParametersGroup"></app-body> <!-- we callback the component with the parametersGroup of the current element -->
