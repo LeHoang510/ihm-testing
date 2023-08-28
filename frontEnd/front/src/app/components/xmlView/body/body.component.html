@@ -7,9 +7,9 @@
             <td>{{ parameter.type }}</td>
 
             <td>
-                <!-- [ioTextinput] (textinputBinder)="setParamChange($event, parameter)" -->
+                <!-- [ioTextinput] (textinputBinder)="setParamChange($event, parameter)" --> 
                 <input type="text" 
-                    [(ngModel)]="parameter.value"  id="{{parameter.name}}"/>
+                    [(ngModel)]="parameter.value"  id="{{parameter.name}}"/>  <!-- [(ngModel)] -> link the value field betweent the front and parameters in bodyComponent -->
                 <!-- {{parameter.value}} -->
             </td>
 
@@ -22,7 +22,7 @@
 
 
         <!-- **************** ParametersGroup case = recursion case -->
-        <tr *ngIf="!isParameter(parameter)">
+        <tr *ngIf="!isParameter(parameter)"> <!-- if it's not a Parameter, then it's a ParametersGroup -->
             <td colspan="5">
                 <p-button [pRowToggler]="parameter" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'" styleClass="p-button-outlined p-button-icon-tiny"></p-button> <!-- expand button -->
                 <span>{{ parameter.name }}</span>
@@ -33,10 +33,10 @@
         <tr>
             <td colspan="7">
                 <tr *ngIf="existParam(parameter)"> <!-- we check if it is a parameter -->
-                    <app-body [parameters]="parameter.Parameter"></app-body> <!-- we callback the component with the parameters of the current element -->
+                    <app-body [parameters]="parameter.Parameter"></app-body> <!-- we callback the component with the Parameter of the current element -->
                 </tr>
                 <tr *ngIf="existParamGroup(parameter)"> <!-- we check if it is a ParametersGroup -->
-                    <app-body [parameters]="parameter.ParametersGroup"></app-body> <!-- we callback the component with the parametersGroup of the current element -->
+                    <app-body [parameters]="parameter.ParametersGroup"></app-body> <!-- we callback the component with the ParametersGroup of the current element -->
                 </tr>
 
     </ng-template>

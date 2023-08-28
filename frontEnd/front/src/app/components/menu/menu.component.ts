@@ -13,7 +13,7 @@ export class MenuComponent {
   xmlNames:string [];
   constructor(private requestService: XmlService, private data: DataService, private router: Router){
     this.xmlNames = [];
-    this.requestService.getXmlNames()
+    this.requestService.getXmlNames() // we request all xml names 
     .then(names => {
       this.xmlNames = names;
     })
@@ -23,7 +23,7 @@ export class MenuComponent {
   sendXmlName(){
     const e = document.getElementById("xml-select") as HTMLSelectElement;
       console.log(e.options[e.selectedIndex].text); 
-      this.data.xmlPath = e.options[e.selectedIndex].text;
+      this.data.xmlPath = e.options[e.selectedIndex].text; // we change the path of the request for the xml
       this.router.navigateByUrl("/xmlView");
   }
 

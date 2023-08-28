@@ -27,11 +27,20 @@ export class DataService {
   }
 
 
+  renameTags(v: string): string {
+    switch(v) {
+      case "Parameter":
+        return "parameters";
+    }
+    return v;
+  }
+
   async parseXml(xmlString: string) {
     const parser = new Parser({
-      "trim": true,
+      // "trim": true,
       "mergeAttrs": true,
-	  explicitArray:false,
+    //   tagNameProcessors: [this.renameTags],
+	  // explicitArray:false,
     });
     return await new Promise((resolve, reject) => parser.parseString(xmlString, (err: any, jsonData: any) => {
       if (err) {
@@ -64,7 +73,7 @@ export class DataService {
 // 	}
 //   }
 
-  jsonToXml(json:any){
+  jsonToXml(json:any):string{
 	const options ={
 		attrkey:"$",
 		rootName: "ParametersGroup",
@@ -73,5 +82,6 @@ export class DataService {
 	const builder = new Builder(options);
 	const xmlData = builder.buildObject(json);
 	console.log(xmlData);
+	return xmlData;
   }
 }

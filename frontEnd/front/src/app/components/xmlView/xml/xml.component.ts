@@ -16,15 +16,15 @@ export class XmlComponent{
   parameters: ParametersGroup;
 
   constructor(private service: DataService,private requestService: XmlService){
-    this.parameters = {name:""};
-    if (this.service.xmlPath !="--Please choose an xml--"){
+    this.parameters = {name:[""]};
+    if (this.service.xmlPath !="--Please choose an xml--"){ // if the user chose an xml, request the xml
       this.service.requestXml();
     }
   }
 
   parseIntoJson(){
-    if (this.service.xmlPath !== "--Please choose an xml--"){
-      this.service.getJSONData()
+    if (this.service.xmlPath !== "--Please choose an xml--"){ 
+      this.service.getJSONData() // load the xml parsed into JSON in parameters
       .then(data => {
         this.parameters = data;
         console.log(this.parameters);
@@ -33,11 +33,12 @@ export class XmlComponent{
   }
 
   jsonToXml(){
+    console.log(this.convertFormat(this.parameters));
     this.service.jsonToXml(this.convertFormat(this.parameters));
   }
 
 
-  convertFormat(input: any): any {
+  convertFormat(input: any): any { //convert the format of the JSON to parse back into XML
     const attributes = ["name"];
     if (typeof input === "object") {
       const attributePairs: { [key: string]: string } = {};
@@ -72,7 +73,7 @@ export class XmlComponent{
 
 
   runForecast(){
-    this.requestService.runSimulation();
+    this.requestService.runSimulation(this.service.jsonToXml(this.convertFormat(this.parameters)));
   }
 
 }

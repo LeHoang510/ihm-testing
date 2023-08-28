@@ -18,7 +18,7 @@ export class XmlService {
 		return lastValueFrom(this.http.get("http://localhost:5000/getxml/" + xmlName,{ responseType: 'text' }));
   	}
 
-	runSimulation(): Observable<any[]>{
-		return this.http.get<any[]>("http://localhost:5000/run_forecast");
+	runSimulation(xml:string): Promise<any>{
+		return lastValueFrom(this.http.post("http://localhost:5000/run_cydre",xml ,{ responseType: 'text' }));
   	}
 }

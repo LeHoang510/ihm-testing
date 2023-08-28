@@ -3,20 +3,19 @@
 
     <br><br>
 
-<button (click)="parseIntoJson()">load data</button>
+<button (click)="parseIntoJson()">load data</button> <!-- button to let the variable parameters being filled to avoid a null object because of promise which is asynchronous -->
 
 
     <br><br>
 
-<button (click)="jsonToXml()">convert to XML</button>
+<button (click)="jsonToXml()">convert to XML</button> <!-- To check if the values in the XML have changed and also check its syntax -->
 
     <br><br>
 
-<button >RUN!</button>
+<button (click)="runForecast()">RUN!</button>
 
 
 <app-header></app-header>
-        
 
 <app-body [parameters] = "[parameters]"></app-body>
 

@@ -32,5 +32,12 @@ def cydre():
     xmlPath="cydre_params.xml"
     return flask.send_file(xmlPath, mimetype='application/xml')
 
+@app.route('/run_cydre', methods=['POST'])
+@cross_origin()
+def run_cydre():
+    data = flask.request.get_data()
+    print(data.decode())
+    return "all good"
+
 if __name__ == '__main__':
     app.run()

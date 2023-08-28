@@ -1,18 +1,18 @@
 export interface ParametersGroup {
     // parent?: ParametersGroup,
-    name: string,
+    name: Array<string>,
     Parameter?: Array<Parameter>,
     ParametersGroup?: Array<ParametersGroup>
 }
 
 export interface Parameter{
     // parent?: ParametersGroup,
-    name: string,
-    description: string,
-    possible_values: string,
-    type: string,
-    value: string,
-    default_value: string
+    name: Array<string>,
+    description: Array<string>,
+    possible_values: Array<string>,
+    type: Array<string>,
+    value: Array<string>,
+    default_value: Array<string>
 }
 
 // export function getFullPathParam(param: ParametersGroup | Parameter | undefined): Array<string> {
