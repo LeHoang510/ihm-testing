@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { interactoTreeUndoProviders } from 'interacto-angular';
 import { ParametersGroup } from 'src/app/model/parameters-group';
 import { DataService } from 'src/app/service/data.service';
@@ -15,7 +16,7 @@ export class XmlComponent{
 
   parameters: ParametersGroup;
 
-  constructor(private service: DataService,private requestService: XmlService){
+  constructor(private service: DataService,private requestService: XmlService, private router:Router){
     this.parameters = {name:[""]};
     if (this.service.xmlPath !="--Please choose an xml--"){ // if the user chose an xml, request the xml
       this.service.requestXml();
@@ -72,8 +73,9 @@ export class XmlComponent{
 
 
 
-  runForecast(){
-    this.requestService.runSimulation(this.service.jsonToXml(this.convertFormat(this.parameters)));
+  runCydre(){
+    this.requestService.runCydre(this.service.jsonToXml(this.convertFormat(this.parameters)));
+    this.router.navigateByUrl("/result");
   }
 
 }

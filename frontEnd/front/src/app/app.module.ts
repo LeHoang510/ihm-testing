@@ -13,6 +13,7 @@ import { BodyComponent } from './components/xmlView/body/body.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { XmlComponent } from './components/xmlView/xml/xml.component';
 import { InteractoModule } from 'interacto-angular';
+import { ResultComponent } from './components/result/result.component';
 
 
 
@@ -23,6 +24,7 @@ import { InteractoModule } from 'interacto-angular';
     BodyComponent,
     MenuComponent,
     XmlComponent,
+    ResultComponent,
   ],
   imports: [
     BrowserModule,

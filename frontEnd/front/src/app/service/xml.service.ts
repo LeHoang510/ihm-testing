@@ -18,7 +18,11 @@ export class XmlService {
 		return lastValueFrom(this.http.get("http://localhost:5000/getxml/" + xmlName,{ responseType: 'text' }));
   	}
 
-	runSimulation(xml:string): Promise<any>{
+	runCydre(xml:string): Promise<any>{
 		return lastValueFrom(this.http.post("http://localhost:5000/run_cydre",xml ,{ responseType: 'text' }));
+  	}
+
+	runCydre2(): Observable<any>{
+		return this.http.get("http://localhost:5000/run_cydre");
   	}
 }

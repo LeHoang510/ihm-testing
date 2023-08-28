@@ -17,7 +17,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/getxmlnames', methods=['GET'])
 @cross_origin()
-def home():
+def xmlList():
     return flask.jsonify(["cydre_inputs", "PARADIS_inputs"])
 
 @app.route('/getxml/PARADIS_inputs', methods=['GET'])
@@ -37,7 +37,7 @@ def cydre():
 def run_cydre():
     data = flask.request.get_data()
     print(data.decode())
-    return "all good"
+    return flask.jsonify("all good")
 
 if __name__ == '__main__':
     app.run()
