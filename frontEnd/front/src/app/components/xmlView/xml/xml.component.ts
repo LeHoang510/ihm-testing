@@ -18,24 +18,19 @@ export class XmlComponent{
 
   constructor(private service: DataService,private requestService: XmlService, private router:Router){
     this.parameters = {name:[""]};
-    if (this.service.xmlPath !="--Please choose an xml--"){ // if the user chose an xml, request the xml
+    if (this.service.xmlPath !="--Please choose an xml--" && this.service.xmlPath !=""){ // if the user chose an xml, request the xml
       this.service.requestXml();
     }
   }
 
   parseIntoJson(){
-    if (this.service.xmlPath !== "--Please choose an xml--"){ 
+    if (this.service.xmlPath !== "--Please choose an xml--" && this.service.xmlPath !=""){ 
       this.service.getJSONData() // load the xml parsed into JSON in parameters
       .then(data => {
         this.parameters = data;
         console.log(this.parameters);
       });
     }
-  }
-
-  jsonToXml(){
-    console.log(this.convertFormat(this.parameters));
-    this.service.jsonToXml(this.convertFormat(this.parameters));
   }
 
 
@@ -74,8 +69,8 @@ export class XmlComponent{
 
 
   runCydre(){
-    this.requestService.runCydre(this.service.jsonToXml(this.convertFormat(this.parameters)));
-    this.router.navigateByUrl("/result");
+    this.requestService.runCydre(this.service.jsonToXml(this.convertFormat(this.parameters))); // send modified xml (use api in backEnd)
+    // this.router.navigateByUrl("/result"); // go to result to launch the app (use with cydre project)
   }
 
 }

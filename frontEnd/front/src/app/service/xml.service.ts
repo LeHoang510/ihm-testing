@@ -5,7 +5,7 @@ import { Observable, lastValueFrom } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })		
-export class XmlService {
+export class XmlService { // service used for http requests
 
 
 	constructor(private http: HttpClient){}

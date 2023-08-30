@@ -4,7 +4,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { XmlComponent } from './components/xmlView/xml/xml.component';
 import { ResultComponent } from './components/result/result.component';
 
-const routes: Routes = [
+const routes: Routes = [ //indicate which component to load depending on the path
 
   {
     path:"menu",

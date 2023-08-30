@@ -7,15 +7,13 @@ import { XmlService } from './xml.service';
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class DataService { //service used to load the received xml and to convert it into json and vice versa
 
-  private xmlData: string = "";
+  private xmlData: string = ""; // variable to load the xml
 
-  public xmlPath:string = "";
+  public xmlPath:string = ""; // path for the request of an xml
 
-  constructor(private requestService: XmlService) {
-
-  }
+  constructor(private requestService: XmlService) {}
 
   requestXml(){
 	this.requestService.getXml(this.xmlPath)
@@ -27,20 +25,9 @@ export class DataService {
   }
 
 
-  renameTags(v: string): string {
-    switch(v) {
-      case "Parameter":
-        return "parameters";
-    }
-    return v;
-  }
-
   async parseXml(xmlString: string) {
     const parser = new Parser({
-      // "trim": true,
       "mergeAttrs": true,
-    //   tagNameProcessors: [this.renameTags],
-	  // explicitArray:false,
     });
     return await new Promise((resolve, reject) => parser.parseString(xmlString, (err: any, jsonData: any) => {
       if (err) {
