@@ -69,8 +69,8 @@ export class XmlComponent{
 
 
   runCydre(){
-    this.requestService.runCydre(this.service.jsonToXml(this.convertFormat(this.parameters))); // send modified xml (use api in backEnd)
-    // this.router.navigateByUrl("/result"); // go to result to launch the app (use with cydre project)
+    //this.requestService.runCydre(this.service.jsonToXml(this.convertFormat(this.parameters))); // send modified xml (use api in backEnd)
+    this.router.navigateByUrl("/result"); // go to result to launch the app (use with cydre project)
   }
 
 }

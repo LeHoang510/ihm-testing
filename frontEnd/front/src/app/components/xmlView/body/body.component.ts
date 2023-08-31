@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Binding, PartialTextInputBinder, TreeUndoHistory, UndoableCommand, UndoableSnapshot } from 'interacto';
+// import { Binding, PartialTextInputBinder, TreeUndoHistory, UndoableCommand, UndoableSnapshot } from 'interacto';
 import { Parameter, ParametersGroup,  } from '../../../model/parameters-group'; //getFullPathParam
 
 @Component({
@@ -13,7 +13,7 @@ export class BodyComponent {
   @Input() parameters: Array<Parameter | ParametersGroup>;
 
 
-  constructor(private history: TreeUndoHistory) {
+  constructor() { //private history: TreeUndoHistory
     this.parameters = [];
   }
 

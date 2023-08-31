@@ -1,3 +1,5 @@
+// Array<string> instead of string because it caused some display bug
+
 export interface ParametersGroup {
     // parent?: ParametersGroup,
     name: Array<string>,

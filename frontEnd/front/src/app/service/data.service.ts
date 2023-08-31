@@ -60,7 +60,7 @@ export class DataService { //service used to load the received xml and to conver
 // 	}
 //   }
 
-  jsonToXml(json:any):string{
+  jsonToXml(json:any):string{ // convert the json to xml
 	const options ={
 		attrkey:"$",
 		rootName: "ParametersGroup",
