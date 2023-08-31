@@ -42,12 +42,12 @@ to launch the angular project. Go to http://localhost:4200/ on a web Browser to 
 ## 3. Basic use case
 
 Choose an xml from the list and click the "go to xml view" button
-![](https://hackmd.io/_uploads/SJEN0RhT2.png)
+![menu](images/menuScreenshot.png)
 
 Then click the "load data" to load the xml. You can then go through it by clicking the little blue arrows
-![](https://hackmd.io/_uploads/Sy8B00n6n.png)
+![xmlView](images/xmlViewScreenshot.png)
 
 Click on the "RUN!" button to launch the python application on the server side. It can take some time to complete. You will see the result as a json at the end. Not really practical but it shows that the python application did run and returned us a result.
-![](https://hackmd.io/_uploads/H1vfRAhT2.png)
+![result](images/resultScreenshot.png)
 
 If you want to change the xml, you will have to come back to the menu with the "back to menu" link and follow the same instructions as before.
