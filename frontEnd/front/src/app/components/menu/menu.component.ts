@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/service/data.service';
 import { XmlService } from 'src/app/service/xml.service';
@@ -8,23 +8,32 @@ import { XmlService } from 'src/app/service/xml.service';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
-export class MenuComponent {
+export class MenuComponent implements AfterViewInit {
 
-  xmlNames:string [];
-  constructor(private requestService: XmlService, private data: DataService, private router: Router){
+  protected xmlNames: Array<string>;
+
+  public constructor(private requestService: XmlService, private data: DataService, private router: Router){
     this.xmlNames = [];
-    this.requestService.getXmlNames() // we request all xml names 
+  }
+
+  public ngAfterViewInit(): void {
+    console.log('coucou1');
+     // we request all xml names
+    this.requestService.getXmlNames()
     .then(names => {
       this.xmlNames = names;
+      console.log('coucou');
     })
-    .catch(err => { console.log(err) })
+    .catch(err => {
+      console.log('coucou eerrr');
+      console.log(err);
+    })
   }
 
-  sendXmlName(){
+  protected sendXmlName(){
     const e = document.getElementById("xml-select") as HTMLSelectElement;
-      console.log(e.options[e.selectedIndex].text); 
-      this.data.xmlPath = e.options[e.selectedIndex].text; // we change the path of the request for the xml
-      this.router.navigateByUrl("/xmlView");
+    // we change the path of the request for the xml
+    this.data.xmlPath = e.options[e.selectedIndex].text;
+    this.router.navigateByUrl("/xmlView");
   }
-
 }

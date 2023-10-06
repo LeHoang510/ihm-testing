@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { interactoTreeUndoProviders } from 'interacto-angular';
 import { ParametersGroup } from 'src/app/model/parameters-group';
@@ -12,19 +12,23 @@ import { XmlService } from 'src/app/service/xml.service';
   styleUrls: ['./xml.component.scss'],
   providers: [interactoTreeUndoProviders()]
 })
-export class XmlComponent{
+export class XmlComponent implements AfterViewInit {
 
   parameters: ParametersGroup;
 
   constructor(private service: DataService,private requestService: XmlService, private router:Router){
     this.parameters = {name:[""]};
-    if (this.service.xmlPath !="--Please choose an xml--" && this.service.xmlPath !=""){ // if the user chose an xml, request the xml
+  }
+
+  ngAfterViewInit(): void {
+    // if the user chose an xml, request the xml
+    if (this.service.xmlPath !="--Please choose an xml--" && this.service.xmlPath !=""){
       this.service.requestXml();
     }
   }
 
   parseIntoJson(){
-    if (this.service.xmlPath !== "--Please choose an xml--" && this.service.xmlPath !=""){ 
+    if (this.service.xmlPath !== "--Please choose an xml--" && this.service.xmlPath !=""){
       this.service.getJSONData() // load the xml parsed into JSON in parameters
       .then(data => {
         this.parameters = data;
@@ -39,7 +43,7 @@ export class XmlComponent{
     if (typeof input === "object") {
       const attributePairs: { [key: string]: string } = {};
       const result: any = {};
-  
+
       for (const [key, value] of Object.entries(input)) { //go through all the elements
         if (attributes.includes(key)) {
           attributePairs[key] = value as string;
@@ -52,7 +56,7 @@ export class XmlComponent{
           result[key] = value;
         }
       }
-  
+
       if (Object.keys(attributePairs).length > 0) {
         if (result["$"]) {
           Object.assign(result["$"], attributePairs);
@@ -60,7 +64,7 @@ export class XmlComponent{
           result["$"] = attributePairs;
         }
       }
-  
+
       return result;
     }
     return input;
