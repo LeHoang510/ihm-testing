@@ -1,48 +1,21 @@
-<ParametersGroup name="Cydre_inputs">
-	<ParametersGroup name="forecast">
-		<Parameter name="watershed_target_name">
-			<description>Name of the watershed for which we wish to predict the seasonal streamflow.</description>
-			<type>string</type>
-			<possible_values/>
-			<value/>
-			<default_value>J0014010</default_value>
-		</Parameter>
-		<Parameter name="watersheds">
-			<description>Name of the regional database file encompassing hydrological, climatic, and geological data from various watersheds.</description>
+<ParametersGroup name="CydreInputs">
+	<ParametersGroup name='Files'>
+		<Parameter name="datasets">
+			<description>Name of the regional database file encompassing hydrological, climatic, and geological data from various watersheds.
+			</description>
 			<type>string</type>
 			<possible_values/>
 			<value/>
 			<default_value>regional_object</default_value>
 		</Parameter>
-		<Parameter name="indicator">
-			<description>Indicator's name used for calculating the similarity between two time series events</description>
+	</ParametersGroup>
+	<ParametersGroup name='ForecastInputs'>
+		<Parameter name="watershed_target_id">
+			<description>ID of the watershed for which we wish to predict the seasonal streamflow.</description>
 			<type>string</type>
 			<possible_values/>
 			<value/>
-			<default_value>Pearson's</default_value>
-		</Parameter>
-		<Parameter name="variable">
-			<description>Name of the variable for which we aim to compute the similarity.</description>
-			<type>string</type>
-			<possible_values>specific_discharge; recharge; runoff</possible_values>
-			<value/>
-			<default_value>specific_discharge</default_value>
-		</Parameter>
-	</ParametersGroup>
-	<ParametersGroup name="time">
-		<Parameter name="similarity_period">
-			<description>Similarity period calculation between two timeseries.</description>
-			<type>string</type>
-			<possible_values>period; ndays</possible_values>
-			<value/>
-			<default_value>ndays</default_value>
-		</Parameter>
-		<Parameter name="ndays_before_forecast">
-			<description>Number of days before the forescast day (or current date).</description>
-			<type>int</type>
-			<possible_values>period; ndays</possible_values>
-			<value/>
-			<default_value>90</default_value>
+			<default_value>J0144010</default_value>
 		</Parameter>
 		<Parameter name="forecast_horizon">
 			<description>Forecast horizon in days.</description>
@@ -50,6 +23,105 @@
 			<possible_values/>
 			<value/>
 			<default_value>30</default_value>
+		</Parameter>
+	</ParametersGroup>
+	<ParametersGroup name="Similarity">
+		<ParametersGroup name='specific_discharge'>
+			<ParametersGroup name="calculation">
+				<Parameter name="correlation">
+					<description>method for quantifying correlation between two time series</description>
+					<type>string</type>
+					<possible_values>nse, nselog, pearson</possible_values>
+					<value/>
+					<default_value>pearson</default_value>
+				</Parameter>
+				<Parameter name="scale">
+					<description>conversion scale used in similarity calculation</description>
+					<type>string</type>
+					<possible_values>normal, log</possible_values>
+					<value/>
+					<default_value>normal</default_value>
+				</Parameter>
+			</ParametersGroup>
+			<ParametersGroup name="selection">
+				<Parameter name="threshold">
+					<description>minimum threshold for extracting top scenarios from the correlation matrix</description>
+					<type>double</type>
+					<possible_values/>
+					<value/>
+					<default_value>O.7</default_value>
+				</Parameter>
+			</ParametersGroup>
+		</ParametersGroup>
+		<ParametersGroup name='recharge'>
+			<ParametersGroup name="calculation">
+				<Parameter name="correlation">
+					<description>method for quantifying correlation between two time series</description>
+					<type>string</type>
+					<possible_values>nse, nselog, pearson</possible_values>
+					<value/>
+					<default_value>pearson</default_value>
+				</Parameter>
+				<Parameter name="scale">
+					<description>conversion scale used in similarity calculation</description>
+					<type>string</type>
+					<possible_values>normal, log</possible_values>
+					<value/>
+					<default_value>normal</default_value>
+				</Parameter>
+			</ParametersGroup>
+			<ParametersGroup name="selection">
+				<Parameter name="threshold">
+					<description>minimum threshold for extracting top scenarios from the correlation matrix</description>
+					<type>double</type>
+					<possible_values/>
+					<value/>
+					<default_value>O.7</default_value>
+				</Parameter>
+			</ParametersGroup>
+		</ParametersGroup>
+		<ParametersGroup name='runoff'>
+			<ParametersGroup name="calculation">
+				<Parameter name="correlation">
+					<description>method for quantifying correlation between two time series</description>
+					<type>string</type>
+					<possible_values>nse, nselog, pearson</possible_values>
+					<value/>
+					<default_value>pearson</default_value>
+				</Parameter>
+				<Parameter name="scale">
+					<description>conversion scale used in similarity calculation</description>
+					<type>string</type>
+					<possible_values>normal, log</possible_values>
+					<value/>
+					<default_value>normal</default_value>
+				</Parameter>
+			</ParametersGroup>
+			<ParametersGroup name="selection">
+				<Parameter name="threshold">
+					<description>minimum threshold for extracting top scenarios from the correlation matrix</description>
+					<type>double</type>
+					<possible_values/>
+					<value/>
+					<default_value>O.7</default_value>
+				</Parameter>
+			</ParametersGroup>
+		</ParametersGroup>
+	</ParametersGroup>
+	<ParametersGroup name="TimeManagement">
+		<Parameter name="similarity_period">
+			<description>Similarity period calculation between two timeseries.</description>
+			<type>string</type>
+			<possible_values>period; ndays</possible_values>
+			<value/>
+			<default_value>period</default_value>
+		</Parameter>
+		<Parameter name="ndays_before_forecast">
+			<description>Number of days before the forescast day (or current date).</description>
+			<type>int</type>
+			<possible_values>period; ndays</possible_values>
+			<value/>
+			<default_value>90</default_value>
 		</Parameter>
 		<Parameter name="time_step">
 			<description>Variable time step (can be daily 'D', weekly 'W' or monthly 'M').</description>

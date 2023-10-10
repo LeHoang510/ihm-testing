@@ -20,7 +20,7 @@ On Windows -> the requirements above and:
 
 For the 'mock' back-end, go into `backEnd`.
 You have to install:
-`pip install flask flask_cors`
+`pip install flask flask_cors plotly`
 
 
 
