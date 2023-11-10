@@ -21,7 +21,7 @@
 .hover-underline-animation {
     display: inline-block;
     position: relative;
-    color: #0087ca;
+    color: $font-black;
   }
   
   .hover-underline-animation::after {
@@ -32,7 +32,7 @@
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #0087ca;
+    background-color: $font-green;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
   }
@@ -41,4 +41,36 @@
     transform: scaleX(1);
     transform-origin: bottom left;
   }
+
+  nav {
+    display: flex;
+    justify-content:center; 
+    padding: 1rem 1rem; 
+    float: right;
+    margin-right: 5%;
+    
+  }
   
+  nav ul {
+    display: flex; 
+    list-style: none;
+    
+  }
+  
+  nav li {
+    padding-left: 5rem;
+    float: right;
+  }
+
+.navbar{
+  width: 100%;
+  height: 20%;
+}
+a{
+  text-decoration: none;
+  color: $font-black;
+  font-weight: 500;
+}
+a:hover{
+  color: $font-green;
+}

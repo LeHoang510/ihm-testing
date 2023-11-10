@@ -1,4 +1,8 @@
 {
     "bannerIntro" : "Digital tool for seasonal forecasting of river flows across Brittany",
-    "homeIntro" : "Home works !"
+    "homeIntro" : "Home works !",
+    "home" : "Home",
+    "data" : "Data and Modeling",
+    "settings" : "Settings",
+    "login" : "Log in"
 }
