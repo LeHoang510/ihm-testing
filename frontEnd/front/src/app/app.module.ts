@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
 import { TreeTableModule } from 'primeng/treetable';
 import { ButtonModule } from 'primeng/button';
@@ -14,8 +14,13 @@ import { MenuComponent } from './components/menu/menu.component';
 import { XmlComponent } from './components/xmlView/xml/xml.component';
 import { InteractoModule } from 'interacto-angular';
 import { ResultComponent } from './components/result/result.component';
+import { HomeComponent } from './home/home.component';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
-
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -25,6 +30,7 @@ import { ResultComponent } from './components/result/result.component';
     MenuComponent,
     XmlComponent,
     ResultComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +40,14 @@ import { ResultComponent } from './components/result/result.component';
     TableModule,
     ButtonModule,
     TreeTableModule,
-    InteractoModule
+    InteractoModule,
+    TranslateModule.forRoot({
+      loader: {
+      provide: TranslateLoader,
+      useFactory: HttpLoaderFactory,
+      deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
