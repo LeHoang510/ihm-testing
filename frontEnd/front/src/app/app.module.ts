@@ -13,6 +13,9 @@ import { HomeComponent } from './home/home.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from './header/header.component';
+import { DataComponent } from './data/data.component';
+import { SettingsComponent } from './settings/settings.component';
+import { LoginComponent } from './login/login.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -23,6 +26,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     HeaderComponent,
     HomeComponent,
+    DataComponent,
+    SettingsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
