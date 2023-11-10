@@ -1,1 +1,8 @@
-<p>header works!</p>
+<div>
+    <p></p>
+</div>
+<div>
+    <select class="form-control" [(ngModel)]="selectLang" name="selectLang" (change)="setTransLanguage()">
+        <option *ngFor="let lang of transLang" value="{{lang}}" selected="selectLang">{{ lang }}</option>
+    </select>
+</div>
