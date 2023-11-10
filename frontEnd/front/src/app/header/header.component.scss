@@ -5,3 +5,40 @@
     padding: 1em;
     background-color: $font-green;
 }
+
+
+.select-language{
+    background-color: $font-white;
+    border: solid 1px $font-green;
+    border-color: $font-green;
+    color: $font-green;
+    border-radius: 15px;
+    text-align: center;
+    float: right;
+    margin-right: 5%;
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+  }
+  
+  .hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
