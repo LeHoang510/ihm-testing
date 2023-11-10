@@ -1,5 +1,7 @@
+@import "src/assets/styles/font-color.scss";
 .banner{
-    color: white;
+    color: $font-white;
     text-align: center;
     padding: 1em;
+    background-color: $font-green;
 }

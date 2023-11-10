@@ -4,6 +4,8 @@
 @import "primeflex/themes/primeone-dark.css";
 body {
     font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
 }
 
 .p-button.p-button-icon-tiny{
@@ -23,9 +25,4 @@ body {
     background-color: rgb(233, 233, 233) !important;
 }
 
-.font-color{
-    color: #35B8BE;
-}
-.bg-color{
-    background-color: #35B8BE;
-}
+
