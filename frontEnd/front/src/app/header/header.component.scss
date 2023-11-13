@@ -86,4 +86,21 @@ img{
 }
 .background{
   width: 100%;
+  height: auto;
+  margin-top : 1%;
+  margin-bottom: 1%;
+  display: block;
+}
+.title {
+  position: relative;
+  text-align: center;
+  color: white; /* Set text color */
+}
+
+.title-text{
+  position: absolute;
+  //top: 50%; /* Position text in the vertical center */
+  //left: 50%; /* Position text in the horizontal center */
+  //transform: translate(-50%, -50%); /* Center the text precisely */
+  margin-left: 5%; /* Remove default margin */
 }
