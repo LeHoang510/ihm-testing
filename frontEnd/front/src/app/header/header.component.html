@@ -1,8 +1,20 @@
-<div class="banner bg-color">
-    <div class="text-sm" translate>bannerIntro</div>
+<div class="banner">
+    <span class="text-sm " translate>bannerIntro</span>
+    <span>
+        <select class="select-language text-sm" [(ngModel)]="selectLang" name="selectLang" (change)="setTransLanguage()">
+            <option *ngFor="let lang of transLang" value="{{lang}}" selected="selectLang">{{ lang }}</option>
+        </select>
+    </span>
 </div>
-<div>
-    <select class="form-control" [(ngModel)]="selectLang" name="selectLang" (change)="setTransLanguage()">
-        <option *ngFor="let lang of transLang" value="{{lang}}" selected="selectLang">{{ lang }}</option>
-    </select>
+<div class="navbar">
+<img src="../../assets/img/franceflag.png">
+<nav>
+    <ul>
+      <li ><a class="hover-underline-animation" routerLink="/home" translate>home</a></li>
+      <li ><a class="hover-underline-animation" routerLink="/data" translate>data</a></li>
+      <li ><a class="hover-underline-animation" routerLink="/settings" translate>settings</a></li>
+      <li ><a class="hover-underline-animation" routerLink="/login" translate>login</a></li>
+    </ul>
+</nav>
 </div>
+  

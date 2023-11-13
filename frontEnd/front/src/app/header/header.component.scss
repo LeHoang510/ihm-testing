@@ -5,3 +5,72 @@
     padding: 1em;
     background-color: $font-green;
 }
+
+
+.select-language{
+    background-color: $font-white;
+    border: solid 1px $font-green;
+    border-color: $font-green;
+    color: $font-green;
+    border-radius: 15px;
+    text-align: center;
+    float: right;
+    margin-right: 5%;
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: $font-black;
+  }
+  
+  .hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: $font-green;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  nav {
+    display: flex;
+    justify-content:center; 
+    padding: 1rem 1rem; 
+    float: right;
+    margin-right: 5%;
+    
+  }
+  
+  nav ul {
+    display: flex; 
+    list-style: none;
+    
+  }
+  
+  nav li {
+    padding-left: 5rem;
+    float: right;
+  }
+
+.navbar{
+  width: 100%;
+  height: 20%;
+}
+a{
+  text-decoration: none;
+  color: $font-black;
+  font-weight: 500;
+}
+a:hover{
+  color: $font-green;
+}
