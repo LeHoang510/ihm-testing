@@ -13,11 +13,15 @@ import { HomeComponent } from './home/home.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from './header/header.component';
-import { DataComponent } from './data/data.component';
+import { ModelingComponent } from './modeling/modeling.component';
 import { SettingsComponent } from './settings/settings.component';
 import { LoginComponent } from './login/login.component';
 import { InputTextModule } from 'primeng/inputtext';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// Start of Hoang module
+import { DropdownModule } from 'primeng/dropdown';
+// End of Hoang module
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -27,12 +31,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    DataComponent,
+    ModelingComponent,
     SettingsComponent,
     LoginComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
@@ -41,6 +46,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     InputTextModule,
     TreeTableModule,
     InteractoModule,
+    DropdownModule,
     TranslateModule.forRoot({
       loader: {
       provide: TranslateLoader,
