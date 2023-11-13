@@ -16,6 +16,7 @@ import { HeaderComponent } from './header/header.component';
 import { DataComponent } from './data/data.component';
 import { SettingsComponent } from './settings/settings.component';
 import { LoginComponent } from './login/login.component';
+import { InputTextModule } from 'primeng/inputtext';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -37,6 +38,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     TableModule,
     ButtonModule,
+    InputTextModule,
     TreeTableModule,
     InteractoModule,
     TranslateModule.forRoot({
