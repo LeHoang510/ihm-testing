@@ -1,9 +1,21 @@
-<div class="container">
+<div class="container pt-4">
   <div>
     <h3>Sélection du bassin versant</h3>
   </div>
 
-  <div class="card flex justify-content-center">
-    <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" placeholder="Select a City"></p-dropdown>
+  <div class="pt-3">
+    <p-dropdown [options]="selections" [(ngModel)]="selectedValue" optionLabel="name" placeholder="Select an option"></p-dropdown>
+  </div>
+
+  <div class="container-fluid justify-content-between p-0 pt-4">
+    <div class="d-flex justify-content-between p-0">
+      <p-button label="Location"
+                styleClass="p-button-outlined"
+                (click)="changeContent('Content 1')"></p-button>
+      <p-button label="Suivi de la ressource en eau" styleClass="p-button-outlined" (click)="changeContent('Content 1')"></p-button>
+      <p-button label="Modélisation" styleClass="p-button-outlined" (click)="changeContent('Content 1')"></p-button>
+      <p-button label="Historique" styleClass="p-button-outlined" (click)="changeContent('Content 1')"></p-button>
+      <p-button label="Prévisions saisionières" styleClass="p-button-outlined" (click)="changeContent('Content 1')"></p-button>
+    </div>
   </div>
 </div>
