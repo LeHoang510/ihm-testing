@@ -16,13 +16,13 @@ export class HeaderComponent implements OnInit{
   }
 
   setTransLanguage(){
-  this.translate.use(this.selectLang);
+    this.translate.use(this.selectLang);
   }
-  
+
   getTransLanguage(){
     this.transLang=[...this.translate.getLangs()];
   }
-  
+
   ngOnInit(){
     this.getTransLanguage();
   }

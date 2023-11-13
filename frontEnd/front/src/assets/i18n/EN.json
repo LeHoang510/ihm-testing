@@ -4,5 +4,6 @@
     "home" : "Home",
     "data" : "Data and Modeling",
     "settings" : "Settings",
-    "login" : "Log in"
+    "login" : "Log in",
+    "select_modeling" : "Sélection du bassin versant"
 }
