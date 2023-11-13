@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-interface City {
+interface Value {
   name: string;
-  code: string;
 }
 
 @Component({
@@ -11,18 +10,21 @@ interface City {
   styleUrls: ['./modeling.component.scss']
 })
 export class ModelingComponent implements OnInit{
-  cities: City[] | undefined;
+  selections: Value[] | undefined;
 
-  selectedCity: City | undefined;
+  selectedValue: Value | undefined;
 
   ngOnInit() {
-    this.cities = [
-      { name: 'New York', code: 'NY' },
-      { name: 'Rome', code: 'RM' },
-      { name: 'London', code: 'LDN' },
-      { name: 'Istanbul', code: 'IST' },
-      { name: 'Paris', code: 'PRS' }
+    this.selections = [
+      { name: 'New York'},
+      { name: 'Rome'},
+      { name: 'London'},
+      { name: 'Istanbul'},
+      { name: 'Paris'}
     ];
-    console.log(this.cities);
+  }
+
+  changeContent(button: string){
+
   }
 }

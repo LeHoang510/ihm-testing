@@ -1,4 +1,7 @@
 @import "src/assets/styles/font-color.scss";
 @import 'primeflex/primeflex.scss';
 
+::ng-deep .p-button.p-button-outlined {
+  color: #333333;
+}
 
