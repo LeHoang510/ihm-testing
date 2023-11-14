@@ -1,7 +1,19 @@
 @import "src/assets/styles/font-color.scss";
 @import 'primeflex/primeflex.scss';
 
-::ng-deep .p-button.p-button-outlined {
+::ng-deep .p-button.p-button-outlined{
   color: #333333;
 }
 
+::ng-deep .p-tabview-nav-content{
+  display: none;
+}
+
+::ng-deep .p-tabview .p-tabview-panels{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+::ng-deep .p-button.p-button-outlined:enabled:hover{
+  color: $font-green;
+}

@@ -14,6 +14,17 @@ export class ModelingComponent implements OnInit{
 
   selectedValue: Value | undefined;
 
+  activeIndex: number = 0;
+
+  value: any;
+
+  modelingOptions: any[] = [
+    { icon: 'pi pi-align-left', justify: 'Left' },
+    { icon: 'pi pi-align-right', justify: 'Right' },
+    { icon: 'pi pi-align-center', justify: 'Center' },
+    { icon: 'pi pi-align-justify', justify: 'Justify' }
+  ];
+
   ngOnInit() {
     this.selections = [
       { name: 'New York'},

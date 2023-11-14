@@ -4,10 +4,18 @@ import { HomeComponent } from './home/home.component';
 import { SettingsComponent } from './settings/settings.component';
 import { LoginComponent } from './login/login.component';
 import { ModelingComponent } from "./modeling/modeling.component";
+import {LocalisationComponent} from "./modeling/localisation/localisation.component";
+import {ModelisationComponent} from "./modeling/modelisation/modelisation.component";
 
 const routes: Routes = [ //indicate which component to load depending on the path
   { path: 'home', component: HomeComponent },
-  { path: 'modeling', component: ModelingComponent },
+  { path: 'modeling',
+    component: ModelingComponent,
+    children: [
+      {path: 'localisation', component: LocalisationComponent},
+      {path: 'modelisation', component: ModelisationComponent},
+    ]
+  },
   { path: 'settings', component: SettingsComponent },
   { path: 'login', component: LoginComponent},
   { path: '**', redirectTo: '/home', pathMatch: 'full'}

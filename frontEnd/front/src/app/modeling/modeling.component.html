@@ -11,11 +11,43 @@
     <div class="d-flex justify-content-between p-0">
       <p-button label="Location"
                 styleClass="p-button-outlined"
-                (click)="changeContent('Content 1')"></p-button>
-      <p-button label="Suivi de la ressource en eau" styleClass="p-button-outlined" (click)="changeContent('Content 1')"></p-button>
-      <p-button label="Modélisation" styleClass="p-button-outlined" (click)="changeContent('Content 1')"></p-button>
-      <p-button label="Historique" styleClass="p-button-outlined" (click)="changeContent('Content 1')"></p-button>
-      <p-button label="Prévisions saisionières" styleClass="p-button-outlined" (click)="changeContent('Content 1')"></p-button>
+                routerLink="/modeling/localisation"
+                aria-pressed="true"
+                (click)="activeIndex = 0"></p-button>
+      <p-button label="Suivi de la ressource en eau"
+                styleClass="p-button-outlined"
+                (click)="activeIndex = 1"></p-button>
+      <p-button label="Modélisation"
+                styleClass="p-button-outlined"
+                (click)="activeIndex = 2"></p-button>
+      <p-button label="Historique"
+                styleClass="p-button-outlined"
+                (click)="activeIndex = 3"></p-button>
+      <p-button label="Prévisions saisionières"
+                styleClass="p-button-outlined"
+                (click)="activeIndex = 4"></p-button>
     </div>
   </div>
+
+  <p-tabView [(activeIndex)]="activeIndex">
+    <p-tabPanel class="p-0">
+      <app-localisation></app-localisation>
+    </p-tabPanel>
+
+    <p-tabPanel>
+      <app-ressource></app-ressource>
+    </p-tabPanel>
+
+    <p-tabPanel>
+      <app-modelisation></app-modelisation>
+    </p-tabPanel>
+
+    <p-tabPanel>
+      <app-historique></app-historique>
+    </p-tabPanel>
+
+    <p-tabPanel>
+      <app-prevision></app-prevision>
+    </p-tabPanel>
+  </p-tabView>
 </div>

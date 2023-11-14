@@ -21,6 +21,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Start of Hoang module
 import { DropdownModule } from 'primeng/dropdown';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { LocalisationComponent } from './modeling/localisation/localisation.component';
+import { ModelisationComponent } from './modeling/modelisation/modelisation.component';
+import { TabViewModule } from 'primeng/tabview';
+import { HistoriqueComponent } from './modeling/historique/historique.component';
+import { PrevisionComponent } from './modeling/prevision/prevision.component';
+import { RessourceComponent } from './modeling/ressource/ressource.component';
+import { MapComponent } from './modeling/localisation/map/map.component';
+import { PlotComponent } from './modeling/ressource/plot/plot.component';
+import { SelectButtonModule } from 'primeng/selectbutton';
 // End of Hoang module
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -34,6 +44,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     ModelingComponent,
     SettingsComponent,
     LoginComponent,
+    LocalisationComponent,
+    ModelisationComponent,
+    HistoriqueComponent,
+    PrevisionComponent,
+    RessourceComponent,
+    MapComponent,
+    PlotComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +64,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     TreeTableModule,
     InteractoModule,
     DropdownModule,
+    InputSwitchModule,
+    SelectButtonModule,
+    TabViewModule,
     TranslateModule.forRoot({
       loader: {
       provide: TranslateLoader,
