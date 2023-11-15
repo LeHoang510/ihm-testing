@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  username : string | undefined;
+  username: string | undefined;
+  password: string | undefined;
+
+  onSubmit() {
+    // TODO: Implement login logic here
+    console.log(`Username: ${this.username}, Password: ${this.password}`);
+  }
 }
