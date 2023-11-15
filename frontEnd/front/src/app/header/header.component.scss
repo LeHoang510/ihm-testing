@@ -99,8 +99,12 @@ img{
 
 .title-text{
   position: absolute;
-  //top: 50%; /* Position text in the vertical center */
-  //left: 50%; /* Position text in the horizontal center */
-  //transform: translate(-50%, -50%); /* Center the text precisely */
-  margin-left: 5%; /* Remove default margin */
+  top: 50%; /* Position text in the vertical center */
+  left: 50%; /* Position text in the horizontal center */
+  transform: translate(-50%, -50%); /* Center the text precisely */
+  //margin-left: 5%; /* Remove default margin */
+}
+
+strong{
+  font-color: $font-green;
 }
