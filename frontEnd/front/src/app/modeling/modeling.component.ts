@@ -16,13 +16,12 @@ export class ModelingComponent implements OnInit{
 
   activeIndex: number = 0;
 
-  value: any;
-
-  modelingOptions: any[] = [
-    { icon: 'pi pi-align-left', justify: 'Left' },
-    { icon: 'pi pi-align-right', justify: 'Right' },
-    { icon: 'pi pi-align-center', justify: 'Center' },
-    { icon: 'pi pi-align-justify', justify: 'Justify' }
+  buttons = [
+    { label: 'Location', index: 0 },
+    { label: 'Suivi de la ressource en eau', index: 1 },
+    { label: 'Modélisation', index: 2 },
+    { label: 'Historique', index: 3 },
+    { label: 'Prévisions saisionières', index: 4 }
   ];
 
   ngOnInit() {
@@ -35,7 +34,4 @@ export class ModelingComponent implements OnInit{
     ];
   }
 
-  changeContent(button: string){
-
-  }
 }
