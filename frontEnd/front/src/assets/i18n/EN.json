@@ -6,5 +6,9 @@
     "settings" : "Settings",
     "login" : "Log in",
     "select_modeling" : "Sélection du bassin versant",
-    "homeTitle" : "Presentation of the <strong> CYDRE </strong> project"
+    "homeTitle" : "Presentation of the <strong> CYDRE </strong> project",
+    "loginNoun" : "Login",
+    "username" : "Username",
+    "password" : "Password",
+    "submit" : "Submit"
 }
