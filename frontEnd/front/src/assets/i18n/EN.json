@@ -5,6 +5,7 @@
     "data" : "Data and Modeling",
     "settings" : "Settings",
     "login" : "Log in",
+    "logout" : "Log out",
     "select_modeling" : "Sélection du bassin versant",
     "homeTitle" : "Presentation of the <span class=\"highlight\"> CYDRE </span> project",
     "loginNoun" : "Login",

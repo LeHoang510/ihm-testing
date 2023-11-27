@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { filter } from 'rxjs';
+import { AuthService } from '../service/auth.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -12,7 +13,8 @@ export class HeaderComponent implements OnInit{
   selectLang:string="";
   transLang : string[] =[];
   title : string = "modelingTitle";
-  constructor(public translate: TranslateService, private router: Router){
+  isLoggedIn! : boolean;
+  constructor(public translate: TranslateService, private router: Router, public authService : AuthService ){
     translate.setDefaultLang('FR');
     translate.addLangs(['EN', 'FR']);
     translate.use('FR');
@@ -40,5 +42,12 @@ export class HeaderComponent implements OnInit{
         case '/modeling' : this.title = 'modelingTitle'; break;
       }
     });
+    this.isLoggedIn = this.authService.isLoggedIn;
+    console.log("from header :"+this.isLoggedIn);
   }
+
+  logout(){
+    this.authService.isLoggedIn = false;
+  }
+
 }
