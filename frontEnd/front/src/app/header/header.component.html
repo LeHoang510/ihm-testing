@@ -12,16 +12,16 @@
         <img src="../../assets/img/logo2.png">
         <nav>
             <ul>
-            <li ><a class="hover-underline-animation" routerLink="/home" translate>home</a></li>
-            <li ><a class="hover-underline-animation" routerLink="/modeling" translate>data</a></li>
-            <li ><a class="hover-underline-animation" routerLink="/settings" translate>settings</a></li>
-            <li ><a class="hover-underline-animation" routerLink="/login" translate>login</a></li>
+            <li ><a class="hover-underline-animation" routerLink="/home" routerLinkActive="active" translate>home</a></li>
+            <li ><a class="hover-underline-animation" routerLink="/modeling" routerLinkActive="active" translate>data</a></li>
+            <li ><a class="hover-underline-animation" routerLink="/settings" routerLinkActive="active" translate>settings</a></li>
+            <li ><a class="hover-underline-animation" routerLink="/login"  routerLinkActive="active" translate>login</a></li>
             </ul>
         </nav>
     </div>
     <div class="title">
-        <h1 class="display-1 title-text" [innerHTML]="'homeTitle' | translate"></h1>
-        
+        <h1 class="display-1 title-text" [innerHTML]="title | translate"></h1>
+        <!-- <h1 class="display-1 title-text" translate> {{'homeTitle' | translate}}</h1> -->
         <img src="../../assets/img/background.png" class="background">
     </div>
 </div>

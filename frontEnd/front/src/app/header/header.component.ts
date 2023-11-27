@@ -1,14 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { filter } from 'rxjs';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class HeaderComponent implements OnInit{
   selectLang:string="";
   transLang : string[] =[];
-  constructor(public translate: TranslateService){
+  title : string = "modelingTitle";
+  constructor(public translate: TranslateService, private router: Router){
     translate.setDefaultLang('FR');
     translate.addLangs(['EN', 'FR']);
     translate.use('FR');
@@ -25,5 +29,16 @@ export class HeaderComponent implements OnInit{
 
   ngOnInit(){
     this.getTransLanguage();
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      const currentRoute = this.router.url;
+      switch (currentRoute) {
+        case '/home' : this.title = 'homeTitle'; break;
+        case '/settings' : this.title = 'settingsTitle'; break;
+        case '/login' : this.title = 'loginTitle'; break;
+        case '/modeling' : this.title = 'modelingTitle'; break;
+      }
+    });
   }
 }
