@@ -5,10 +5,14 @@
     "data" : "Data and Modeling",
     "settings" : "Settings",
     "login" : "Log in",
+    "logout" : "Log out",
     "select_modeling" : "Sélection du bassin versant",
-    "homeTitle" : "Presentation of the <strong> CYDRE </strong> project",
+    "homeTitle" : "Presentation of the <span class=\"highlight\"> CYDRE </span> project",
     "loginNoun" : "Login",
     "username" : "Username",
     "password" : "Password",
-    "submit" : "Submit"
+    "submit" : "Submit",
+    "modelingTitle" : "Explore the <span class=\"highlight\">data</span> and <span class=\"highlight\">modeling</span> by choosing the watershed and one of the fields below",
+    "settingsTitle" : "<span class=\"highlight\">Update</span> your account",
+    "loginTitle" : "<span class=\"highlight\">Log in</span> to access your account"
 }
