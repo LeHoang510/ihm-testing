@@ -29,8 +29,8 @@ import { HistoriqueComponent } from './modeling/historique/historique.component'
 import { PrevisionComponent } from './modeling/prevision/prevision.component';
 import { RessourceComponent } from './modeling/ressource/ressource.component';
 import { MapComponent } from './modeling/localisation/map/map.component';
-import { PlotComponent } from './modeling/ressource/plot/plot.component';
 import { SelectButtonModule } from 'primeng/selectbutton';
+
 // End of Hoang module
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -50,7 +50,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     PrevisionComponent,
     RessourceComponent,
     MapComponent,
-    PlotComponent,
   ],
   imports: [
     BrowserModule,

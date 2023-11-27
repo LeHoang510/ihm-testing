@@ -23,3 +23,7 @@
     color: $font-white;
   }
 }
+::ng-deep div.card-header{
+  background: $font-green;
+  color: $font-white;
+}
