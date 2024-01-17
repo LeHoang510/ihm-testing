@@ -82,6 +82,7 @@ a:hover{
 
 img{
   margin-right: 1%;
+
 }
 
 .container{
@@ -91,8 +92,8 @@ img{
 }
 .background{
   width: 100%;
-  height: auto;
-  min-height: 200px;
+  height: 20em;
+  min-height: 8em;
   margin-top : 1%;
   margin-bottom: 1%;
   display: block;
@@ -112,10 +113,13 @@ img{
   transform: translate(-50%, -50%); /* Center the text precisely */
   //margin-left: 5%; /* Remove default margin */
   font-weight: bold;
-  font-size: 4vw;
+  font-size: 2.5vw;
 }
 
 .highlight {
   color: $font-green;
   
+}
+.cydre-logo{
+  margin-left: 5em;
 }
