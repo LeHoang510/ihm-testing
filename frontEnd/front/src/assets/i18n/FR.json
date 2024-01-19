@@ -35,6 +35,7 @@
     "inputBirthday" : "Entrez votre date de naissance",
     "saveChanges" : "Sauvegarder",
     "cancel" : "Annuler",
-    "modify" : "Modifier"
+    "modify" : "Modifier",
+    "bannerWelcome" : "Bonjour M.NGUYEN !"
     
 }

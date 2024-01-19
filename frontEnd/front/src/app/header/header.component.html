@@ -1,6 +1,7 @@
 <div class="container-fluid p-0">
     <div class="banner">
-        <span translate>bannerIntro</span>
+        <span *ngIf="!this.authService.isLoggedIn" translate>bannerIntro</span>
+        <span *ngIf="this.authService.isLoggedIn" translate>bannerWelcome</span>
         <span>
             <select class="select-language" [(ngModel)]="selectLang" name="selectLang" (change)="setTransLanguage()">
                 <option *ngFor="let lang of transLang" value="{{lang}}" selected="selectLang">{{ lang }}</option>

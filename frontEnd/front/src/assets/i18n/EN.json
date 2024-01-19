@@ -35,5 +35,6 @@
     "inputBirthday" : "Enter your birthday",
     "saveChanges" : "Save changes",
     "cancel" : "Cancel",
-    "modify" : "Modify"
+    "modify" : "Modify",
+    "bannerWelcome" : "Hello Mr.NGUYEN !"
 }
