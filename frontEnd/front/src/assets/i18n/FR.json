@@ -14,6 +14,27 @@
     "submit" : "Soumettre",
     "modelingTitle" : "Explorez les <span class=\"highlight\">données</span> et la <span class=\"highlight\">modélisation</span> en choisissant le bassin versant et l’un des champs ci-desous",
     "settingsTitle" : "<span class=\"highlight\">Mettez à jour</span> votre compte",
-    "loginTitle" : "<span class=\"highlight\">Connectez-vous</span> pour accéder à votre compte"
+    "loginTitle" : "<span class=\"highlight\">Connectez-vous</span> pour accéder à votre compte",
+    "profilePicture" : "Photo de profil",
+    "uploadImg" : "Télécharger une nouveulle image",
+    "accountDetails" : "Détails du compte",
+    "inputUsername" : "Entrez votre nom d'utilisateur",
+    "firstname" : "Prénom",
+    "inputFirstname" : "Entrez votre prénom",
+    "lastname" : "Nom de famille",
+    "inputLastname" : "Entrez votre nom de famille",
+    "organizationname"  : "Nom de l'organisation",
+    "inputOrganizationname" : "Entrez le nom de votre organisation",
+    "location" : "Location",
+    "inputLocation" : "Enter your location",
+    "emailAddress" : "Adresse mail",
+    "inputEmailAdress" : "Entrez votre adresse mail",
+    "phoneNumber" : "Numéro de téléphone",
+    "inputPhoneNumber" : "Entrez votre numéro de téléphone",
+    "birthday" : "Date de naissance",
+    "inputBirthday" : "Entrez votre date de naissance",
+    "saveChanges" : "Sauvegarder",
+    "cancel" : "Annuler",
+    "modify" : "Modifier"
     
 }

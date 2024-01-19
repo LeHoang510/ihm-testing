@@ -1,58 +1,58 @@
-<p>settings works!</p>
+
 
 <div class="container-xl px-4 mt-4">
   <div class="row">
     <div class="col-xl-4">
       <div class="card mb-4 mb-xl-0">
-        <div class="card-header">Profile Picture</div>
+        <div class="card-header" translate>profilePicture</div>
         <div class="card-body text-center">
           <img class="img-account-profile rounded-circle mb-2" src="assets/img/avatar.png" width="300" height="300" alt="">
           <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-          <p-button label="Upload new image"></p-button>
+          <p-button [label]="'uploadImg' | translate"></p-button>
         </div>
       </div>
     </div>
     <div class="col-xl-8">
       <div class="card mb-4">
-        <div class="card-header">Account Details</div>
+        <div class="card-header" translate>accountDetails</div>
         <div class="card-body">
           <form>
             <div class="mb-3">
-              <label class="small mb-1" for="inputUsername">Username</label>
-              <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="username">
+              <label class="small mb-1" for="inputUsername" translate>username</label>
+              <input class="form-control" id="inputUsername" type="text" [placeholder]="'inputUsername' | translate" value="username">
             </div>
             <div class="row gx-3 mb-3">
               <div class="col-md-6">
-                <label class="small mb-1" for="inputFirstName">First name</label>
-                <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="Le Hoang">
+                <label class="small mb-1" for="inputFirstName" translate>firstname</label>
+                <input class="form-control" id="inputFirstName" type="text" [placeholder]="'inputFirstname' | translate" value="Le Hoang">
               </div>
               <div class="col-md-6">
-                <label class="small mb-1" for="inputLastName">Last name</label>
-                <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value="Nguyen">
+                <label class="small mb-1" for="inputLastName" translate>lastname</label>
+                <input class="form-control" id="inputLastName" type="text" [placeholder]="'inputLastname' | translate" value="Nguyen">
               </div>
             </div>
             <div class="row gx-3 mb-3">
               <div class="col-md-6">
-                <label class="small mb-1" for="inputOrgName">Organization name</label>
-                <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="INSA">
+                <label class="small mb-1" for="inputOrgName" translate>organizationname</label>
+                <input class="form-control" id="inputOrgName" type="text" [placeholder]="'inputOrganizationname' | translate" value="INSA">
               </div>
               <div class="col-md-6">
-                <label class="small mb-1" for="inputLocation">Location</label>
-                <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" value="Rennes">
+                <label class="small mb-1" for="inputLocation" translate>location</label>
+                <input class="form-control" id="inputLocation" type="text" [placeholder]="'inputLocation' | translate" value="Rennes">
               </div>
             </div>
             <div class="mb-3">
-              <label class="small mb-1" for="inputEmailAddress">Email address</label>
-              <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="insa@fr.com">
+              <label class="small mb-1" for="inputEmailAddress" translate>emailAddress</label>
+              <input class="form-control" id="inputEmailAddress" type="email" [placeholder]="'inputEmailAddress' | translate" value="insa@fr.com">
             </div>
             <div class="row gx-3 mb-3">
               <div class="col-md-6">
-                <label class="small mb-1" for="inputPhone">Phone number</label>
-                <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="666 3629">
+                <label class="small mb-1" for="inputPhone" translate>phoneNumber</label>
+                <input class="form-control" id="inputPhone" type="tel" [placeholder]="'inputPhoneNumber' | translate" value="02 34 56 78 90">
               </div>
               <div class="col-md-6">
-                <label class="small mb-1" for="inputBirthday">Birthday</label>
-                <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="05/10/2001">
+                <label class="small mb-1" for="inputBirthday" translate>birthday</label>
+                <input class="form-control" id="inputBirthday" type="text" name="birthday" [placeholder]="'inputBirthday' | translate" value="05/10/2001">
               </div>
             </div>
             <p-button label="Save changes"></p-button>
