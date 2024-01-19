@@ -12,10 +12,10 @@
         <img src="../../assets/img/logo2.png">
         <nav>
             <ul>
-            <li ><a class="hover-underline-animation" routerLink="/home" routerLinkActive="active" translate>home</a></li>
-            <li *ngIf="this.authService.isLoggedIn" ><a class="hover-underline-animation" routerLink="/modeling" routerLinkActive="active" translate>data</a></li>
-            <li *ngIf="this.authService.isLoggedIn"><a class="hover-underline-animation" routerLink="/settings" routerLinkActive="active" translate>settings</a></li>
-            <li *ngIf="!this.authService.isLoggedIn"><a class="hover-underline-animation" routerLink="/login"  routerLinkActive="active" translate>login</a></li>
+            <li ><a class="hover-underline-animation" routerLink="/home" routerLinkActive="active" translate (click)="home()">home</a></li>
+            <li *ngIf="this.authService.isLoggedIn" ><a class="hover-underline-animation" routerLink="/modeling" routerLinkActive="active" translate (click)="data()">data</a></li>
+            <li *ngIf="this.authService.isLoggedIn"><a class="hover-underline-animation" routerLink="/settings" routerLinkActive="active" translate (click)="settings()">settings</a></li>
+            <li *ngIf="!this.authService.isLoggedIn"><a class="hover-underline-animation" routerLink="/login"  routerLinkActive="active" translate (click)="login()">login</a></li>
             <li *ngIf="this.authService.isLoggedIn"><a class="hover-underline-animation" routerLink="/login"  routerLinkActive="active" translate (click)="logout()">logout</a></li>
             </ul>
         </nav>

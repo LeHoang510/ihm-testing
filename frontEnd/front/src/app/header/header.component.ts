@@ -43,11 +43,30 @@ export class HeaderComponent implements OnInit{
       }
     });
     this.isLoggedIn = this.authService.isLoggedIn;
-    console.log("from header :"+this.isLoggedIn);
+    //console.log("from header :"+this.isLoggedIn);
   }
 
   logout(){
     this.authService.isLoggedIn = false;
+    console.log("User logged out");
   }
+
+  home(){
+    console.log("User clicked on home page");
+  }
+
+  settings(){
+    console.log("User clicked on settings page");
+  }
+
+  login(){
+    console.log("User clicked on login page");
+  }
+
+  data(){
+    console.log("User clicked on modeling page");
+  }
+
+
 
 }

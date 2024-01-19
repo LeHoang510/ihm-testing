@@ -7,12 +7,14 @@
                 <label htmlFor="username" translate>username</label>
             </span>
         </div>
+        <br>
         <div class="form-group">
             <span class="p-float-label">
                 <input pInputText id="password" name="password" [(ngModel)]="password" required />
                 <label htmlFor="password" translate>password</label>
             </span>
         </div>
-        <button type="submit" pButton class="p-button-primary" (click)="onSubmit()" translate>submit</button>
+        <br>
+        <button type="submit" class="p-button" (click)="onSubmit()" translate>submit</button>
     </form>
 </div>

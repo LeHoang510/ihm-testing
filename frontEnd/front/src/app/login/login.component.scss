@@ -23,14 +23,14 @@
     gap: 1rem;
 }
 
-button{
+.p-button{
     background-color: $font-green;
     border-color: $font-green;
     color: $font-white;
 }
 
-button:hover{
+.p-button:hover{
     background-color: $font-white;
     border-color: $font-green;
-    color: $font-green;
+    color: $font-bold-green;
 }
