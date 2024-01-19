@@ -27,3 +27,16 @@
   background: $font-green;
   color: $font-white;
 }
+
+.p-button{
+  background-color: $font-green;
+  border-color: $font-green;
+  color: $font-white;
+}
+
+.p-button:hover{
+  background-color: $font-white;
+  border-color: $font-green;
+  border: solid 1px;
+  color: $font-bold-green;
+}
