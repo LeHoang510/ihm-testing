@@ -30,6 +30,7 @@ import { PrevisionComponent } from './modeling/prevision/prevision.component';
 import { RessourceComponent } from './modeling/ressource/ressource.component';
 import { MapComponent } from './modeling/localisation/map/map.component';
 import { SelectButtonModule } from 'primeng/selectbutton';
+import { FooterComponent } from './footer/footer.component';
 
 // End of Hoang module
 export function HttpLoaderFactory(http: HttpClient) {
@@ -50,6 +51,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     PrevisionComponent,
     RessourceComponent,
     MapComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

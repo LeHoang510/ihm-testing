@@ -7,6 +7,12 @@ body {
     font-family: var(--font-family);
     margin: 0;
     padding: 0;
+    height: 100%;
+}
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 .p-button.p-button-icon-tiny{

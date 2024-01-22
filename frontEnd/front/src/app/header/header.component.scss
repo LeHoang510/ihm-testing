@@ -2,25 +2,18 @@
 .banner{
     color: $font-white;
     text-align: center;
-    padding: 1em;
     background-color: $font-green;
 }
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background-color: white;
-}
+
 
 .select-language{
     background-color: $font-white;
     border: solid 1px $font-green;
     border-color: $font-green;
     color: $font-green;
-    border-radius: 15px;
+    width: 70px;
+    border-radius: 5px;
     text-align: center;
-    float: right;
-    margin-right: 5%;
 }
 
 .hover-underline-animation {
@@ -28,7 +21,7 @@
     position: relative;
     color: $font-black;
   }
-  
+
   .hover-underline-animation::after {
     content: '';
     position: absolute;
@@ -41,7 +34,7 @@
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
   }
-  
+
   .hover-underline-animation:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
@@ -49,19 +42,19 @@
 
   nav {
     display: flex;
-    justify-content:center; 
-    padding: 1rem 1rem; 
+    justify-content:center;
+    padding: 1rem 1rem;
     float: right;
     margin-right: 5%;
-    
+
   }
-  
+
   nav ul {
-    display: flex; 
+    display: flex;
     list-style: none;
-    
+
   }
-  
+
   nav li {
     padding-left: 5rem;
     float: right;
@@ -70,6 +63,10 @@
 .navbar{
   width: 100%;
   height: 20%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: white;
 }
 a{
   text-decoration: none;
@@ -93,16 +90,14 @@ img{
   width: 100%;
   height: auto;
   min-height: 200px;
-  margin-top : 1%;
-  margin-bottom: 1%;
   display: block;
-
-
 }
 .title {
   position: relative;
   text-align: center;
   color: white; /* Set text color */
+  // background: url("../../assets/img/background.png") top center;
+  background-size: cover;
 }
 
 .title-text{
@@ -117,5 +112,80 @@ img{
 
 .highlight {
   color: $font-green;
-  
+
+}
+
+.menu-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-button ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.menu-button li {
+  margin: 0 10px; /* Adjust the margin as needed */
+}
+
+.menu-button a {
+  text-decoration: none;
+  color: black; /* Change the color as needed */
+}
+.logo{
+  display: flex;
+}
+
+$menuHeight: 60px;
+$menuBreakpoint: 950px;
+
+.menu-button {
+
+  .burger {
+    padding: 0 10px;
+    border-left: 1px solid #eee;
+    display: none;
+    cursor: pointer;
+
+    i {
+      color: #999;
+      line-height: $menuHeight;
+    }
+
+    @media (max-width: $menuBreakpoint) {
+      display: block;
+    }
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $menuBreakpoint) {
+      display: none;
+
+      &.is-open {
+        display: block;
+        position: absolute;
+        top: #{$menuHeight + 2};
+        background: #fff;
+        width: 100%;
+
+        .menu-item {
+          border-bottom: 1px solid #cccccc;
+        }
+      }
+    }
+
+    .menu-item {
+      padding: 0 10px;
+      height: $menuHeight;
+      line-height: $menuHeight;
+      display: block;
+    }
+  }
 }

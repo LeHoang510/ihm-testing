@@ -14,6 +14,11 @@ export class HeaderComponent implements OnInit{
   transLang : string[] =[];
   title : string = "modelingTitle";
   isLoggedIn! : boolean;
+  isMenuOpen = false;
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
   constructor(public translate: TranslateService, private router: Router, public authService : AuthService ){
     translate.setDefaultLang('FR');
     translate.addLangs(['EN', 'FR']);
@@ -45,9 +50,14 @@ export class HeaderComponent implements OnInit{
     this.isLoggedIn = this.authService.isLoggedIn;
     console.log("from header :"+this.isLoggedIn);
   }
-
+  change(){
+    this.authService.isLogging = false;
+  }
   logout(){
     this.authService.isLoggedIn = false;
+  }
+  login(){
+    this.authService.isLogging = true;
   }
 
 }
