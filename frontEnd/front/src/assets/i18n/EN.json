@@ -36,5 +36,11 @@
     "saveChanges" : "Save changes",
     "cancel" : "Cancel",
     "modify" : "Modify",
-    "bannerWelcome" : "Hello Mr.NGUYEN !"
+    "bannerWelcome" : "Hello Mr.NGUYEN !",
+    "jpgRequired" : "JPG or PNG no larger than 5 MB",
+    "confirmationPassword" : "Confirmation password",
+    "inputConfirmationPassword" : "Enter your password again",
+    "inputPassword" : "Enter your password",
+    "msgConfirmChanges" : "Your information has been updated successfully ! ",
+    "discard" : "Discard"
 }

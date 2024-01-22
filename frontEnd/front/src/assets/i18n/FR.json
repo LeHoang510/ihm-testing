@@ -36,6 +36,12 @@
     "saveChanges" : "Sauvegarder",
     "cancel" : "Annuler",
     "modify" : "Modifier",
-    "bannerWelcome" : "Bonjour M.NGUYEN !"
+    "bannerWelcome" : "Bonjour M.NGUYEN !",
+    "jpgRequired" : "JPG ou PNG ne dépassant pas 5 Mo",
+    "confirmationPassword" : "Confirmation du mot de passe",
+    "inputConfirmationPassword" : "Confirmez votre mot de passe",
+    "inputPassword" : "Entrez votre mot de passe",
+    "msgConfirmChanges" : "Votre information a été mise à jour avec succès !",
+    "discard" : "Annuler"
     
 }
