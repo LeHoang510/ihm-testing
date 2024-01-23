@@ -1,5 +1,5 @@
 <div class="container-fluid p-0">
-    <div class="banner row">
+    <div class="banner row" style="margin-right: 0;">
       <div class="col-9 text-right fs-md-1 fs-sm-1" translate>bannerIntro</div>
 
       <div class="col-1 text-right offset-2 pr-3">
@@ -18,18 +18,32 @@
       <!-- ======= Mobile nav toggle button ======= -->
 <!--      <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>-->
 
-      <nav class="menu-button">
-        <div class="burger" (click)="toggleMenu()">
-          <i class="material-icons">{{ isMenuOpen ? "close" : "menu" }}</i>
-        </div>
-        <ul class="menu" [class.is-open]="isMenuOpen">
-          <li><a class="hover-underline-animation menu-item" routerLink="/home" routerLinkActive="active" translate (click)="change()">home</a></li>
-          <li *ngIf="!this.authService.isLoggedIn"><a class="hover-underline-animation menu-item" routerLink="/login"  routerLinkActive="active" translate (click)="login()">login</a></li>
-          <li *ngIf="this.authService.isLoggedIn" ><a class="hover-underline-animation menu-item" routerLink="/modeling" routerLinkActive="active" translate>data</a></li>
-          <li *ngIf="this.authService.isLoggedIn"><a class="hover-underline-animation menu-item" routerLink="/settings" routerLinkActive="active" translate>settings</a></li>
-          <li *ngIf="this.authService.isLoggedIn"><a class="hover-underline-animation menu-item" routerLink="/login"  routerLinkActive="active" translate (click)="logout()">logout</a></li>
-        </ul>
-      </nav>
+<!--      <nav class="menu-button">-->
+<!--        <div class="burger" (click)="toggleMenu()">-->
+<!--          <i class="material-icons">{{ isMenuOpen ? "close" : "menu" }}</i>-->
+<!--        </div>-->
+<!--        <ul class="menu" [class.is-open]="isMenuOpen">-->
+<!--          <li><a class="hover-underline-animation menu-item" routerLink="/home" routerLinkActive="active" translate (click)="change()">home</a></li>-->
+<!--          <li *ngIf="!this.authService.isLoggedIn"><a class="hover-underline-animation menu-item" routerLink="/login"  routerLinkActive="active" translate (click)="login()">login</a></li>-->
+<!--          <li *ngIf="this.authService.isLoggedIn" ><a class="hover-underline-animation menu-item" routerLink="/modeling" routerLinkActive="active" translate>data</a></li>-->
+<!--          <li *ngIf="this.authService.isLoggedIn"><a class="hover-underline-animation menu-item" routerLink="/settings" routerLinkActive="active" translate>settings</a></li>-->
+<!--          <li *ngIf="this.authService.isLoggedIn"><a class="hover-underline-animation menu-item" routerLink="/login"  routerLinkActive="active" translate (click)="logout()">logout</a></li>-->
+<!--        </ul>-->
+<!--      </nav>-->
+
+<!--=======-->
+<!--        <img class="cydre-logo" src="../../assets/img/logo1.png">-->
+<!--        <img src="../../assets/img/logo2.png">-->
+<!--        <nav>-->
+<!--            <ul>-->
+<!--            <li ><a class="hover-underline-animation" routerLink="/home" routerLinkActive="active" translate>home</a></li>-->
+<!--            <li *ngIf="this.authService.isLoggedIn" ><a class="hover-underline-animation" routerLink="/modeling" routerLinkActive="active" translate>data</a></li>-->
+<!--            <li *ngIf="this.authService.isLoggedIn"><a class="hover-underline-animation" routerLink="/settings" routerLinkActive="active" translate>settings</a></li>-->
+<!--            <li *ngIf="!this.authService.isLoggedIn"><a class="hover-underline-animation" routerLink="/login"  routerLinkActive="active" translate>login</a></li>-->
+<!--            <li *ngIf="this.authService.isLoggedIn"><a class="hover-underline-animation" routerLink="/login"  routerLinkActive="active" translate (click)="logout()">logout</a></li>-->
+<!--            </ul>-->
+<!--        </nav>-->
+<!--&gt;>>>>>> 4b66d38fc7465ef2b9594f5fa03149e9ea3719ce-->
     </div>
     <div class="title" *ngIf="!this.authService.isLogging">
         <h1 class="display-1 title-text" [innerHTML]="title | translate"></h1>

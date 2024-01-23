@@ -79,6 +79,7 @@ a:hover{
 
 img{
   margin-right: 1%;
+
 }
 
 .container{
@@ -88,8 +89,12 @@ img{
 }
 .background{
   width: 100%;
-  height: auto;
-  min-height: 200px;
+  //height: auto;
+  //min-height: 200px;
+  height: 20em;
+  min-height: 8em;
+  margin-top : 1%;
+  margin-bottom: 1%;
   display: block;
 }
 .title {
@@ -107,12 +112,11 @@ img{
   transform: translate(-50%, -50%); /* Center the text precisely */
   //margin-left: 5%; /* Remove default margin */
   font-weight: bold;
-  font-size: 4vw;
+  font-size: 2.5vw;
 }
 
 .highlight {
   color: $font-green;
-
 }
 
 .menu-button {
@@ -140,52 +144,57 @@ img{
   display: flex;
 }
 
-$menuHeight: 60px;
-$menuBreakpoint: 950px;
+//$menuHeight: 60px;
+//$menuBreakpoint: 950px;
+//
+//.menu-button {
+//
+//  .burger {
+//    padding: 0 10px;
+//    border-left: 1px solid #eee;
+//    display: none;
+//    cursor: pointer;
+//
+//    i {
+//      color: #999;
+//      line-height: $menuHeight;
+//    }
+//
+//    @media (max-width: $menuBreakpoint) {
+//      display: block;
+//    }
+//  }
+//
+//  .menu {
+//    display: flex;
+//    align-items: center;
+//
+//    @media (max-width: $menuBreakpoint) {
+//      display: none;
+//
+//      &.is-open {
+//        display: block;
+//        position: absolute;
+//        top: #{$menuHeight + 2};
+//        background: #fff;
+//        width: 100%;
+//
+//        .menu-item {
+//          border-bottom: 1px solid #cccccc;
+//        }
+//      }
+//    }
+//
+//    .menu-item {
+//      padding: 0 10px;
+//      height: $menuHeight;
+//      line-height: $menuHeight;
+//      display: block;
+//    }
+//  }
+//}
+//
 
-.menu-button {
-
-  .burger {
-    padding: 0 10px;
-    border-left: 1px solid #eee;
-    display: none;
-    cursor: pointer;
-
-    i {
-      color: #999;
-      line-height: $menuHeight;
-    }
-
-    @media (max-width: $menuBreakpoint) {
-      display: block;
-    }
-  }
-
-  .menu {
-    display: flex;
-    align-items: center;
-
-    @media (max-width: $menuBreakpoint) {
-      display: none;
-
-      &.is-open {
-        display: block;
-        position: absolute;
-        top: #{$menuHeight + 2};
-        background: #fff;
-        width: 100%;
-
-        .menu-item {
-          border-bottom: 1px solid #cccccc;
-        }
-      }
-    }
-
-    .menu-item {
-      padding: 0 10px;
-      height: $menuHeight;
-      line-height: $menuHeight;
-      display: block;
-    }
-  }
+.cydre-logo{
+  margin-left: 5em;
 }

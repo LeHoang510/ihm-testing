@@ -1,6 +1,19 @@
 @import "src/assets/styles/font-color.scss";
 @import 'primeflex/primeflex.scss';
 
+.section-break-3 {
+  $break-color: black;
+  background-color: $break-color;
+  border: 0;
+  border-top: 1px solid $break-color;
+  height: 1px;
+  margin: 2rem auto;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 0;
+
+}
+
 ::ng-deep .p-button.p-button-outlined{
   color: #333333;
 }
