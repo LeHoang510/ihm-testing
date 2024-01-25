@@ -37,6 +37,8 @@ import {MatTreeModule} from '@angular/material/tree';
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatTableModule} from "@angular/material/table";
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatSelectModule} from "@angular/material/select";
 
 // End of Hoang module
 export function HttpLoaderFactory(http: HttpClient) {
@@ -86,7 +88,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatTreeModule,
     MatIconModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatStepperModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

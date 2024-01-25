@@ -14,5 +14,8 @@
     "submit" : "Submit",
     "modelingTitle" : "Explore the <span class=\"highlight\">data</span> and <span class=\"highlight\">modeling</span> by choosing the watershed and one of the fields below",
     "settingsTitle" : "<span class=\"highlight\">Update</span> your account",
-    "loginTitle" : "<span class=\"highlight\">Log in</span> to access your account"
+    "loginTitle" : "<span class=\"highlight\">Log in</span> to access your account",
+    "connectToSocial" : "Join us on social media:",
+    "companyDescription" : "Center for Resources and Scientific Expertise\non the Water of Brittany",
+    "software" : "Software"
 }

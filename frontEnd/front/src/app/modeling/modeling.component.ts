@@ -26,11 +26,11 @@ export class ModelingComponent implements OnInit{
 
   ngOnInit() {
     this.selections = [
-      { name: 'New York'},
-      { name: 'Rome'},
-      { name: 'London'},
-      { name: 'Istanbul'},
-      { name: 'Paris'}
+      { name: 'J0014010'},
+      { name: 'J0121510'},
+      { name: 'J0144010'},
+      { name: 'J0323010'},
+      { name: 'J0611610'},
     ];
   }
 

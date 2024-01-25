@@ -14,6 +14,8 @@
     "submit" : "Soumettre",
     "modelingTitle" : "Explorez les <span class=\"highlight\">données</span> et la <span class=\"highlight\">modélisation</span> en choisissant le bassin versant et l’un des champs ci-desous",
     "settingsTitle" : "<span class=\"highlight\">Mettez à jour</span> votre compte",
-    "loginTitle" : "<span class=\"highlight\">Connectez-vous</span> pour accéder à votre compte"
-    
+    "loginTitle" : "<span class=\"highlight\">Connectez-vous</span> pour accéder à votre compte",
+    "connectToSocial" : "Rejoignez-nous sur les réseaux sociaux :",
+    "companyDescription" : "Centre de Ressources et d’Expertise Scientifique\nsur l’Eau de Bretagne\n",
+    "software" : "logiciel"
 }

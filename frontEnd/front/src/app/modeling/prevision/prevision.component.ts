@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./prevision.component.scss'],
 })
 export class PrevisionComponent {
-
+  show=false;
 }

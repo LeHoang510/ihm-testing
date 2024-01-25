@@ -4,28 +4,64 @@ import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 
 
 interface FoodNode {
+  type?: boolean;
   name: string;
   children?: FoodNode[];
 }
 
 const TREE_DATA: FoodNode[] = [
   {
-    name: 'Fruit',
-    children: [{name: 'Apple'}, {name: 'Banana'}, {name: 'Fruit loops'}],
-  },
-  {
-    name: 'Vegetables',
+    name: 'Cydre',
     children: [
       {
-        name: 'Green',
-        children: [{name: 'Broccoli'}, {name: 'Brussels sprouts'}],
+        name: 'Files',
+        children: [{ name: 'datasets',}]
       },
       {
-        name: 'Orange',
-        children: [{name: 'Pumpkins'}, {name: 'Carrots'}],
+        type: false,
+        name: 'ForecastInputs',
+        children: [
+          {name: 'watershed_target_id'},
+          {name: 'forecast_horizon'}
+        ]
+      },
+      {
+        name: 'Similarity',
+        children: [
+          {
+            name: 'specific_discharge',
+            children: [
+              {name: 'calculation'},
+              {name: 'selection'}
+            ]
+          },
+          {
+            name: 'recharge',
+            children: [
+              {name: 'calculation'},
+              {name: 'selection'}
+            ]
+          },
+          {
+            name: 'runoff',
+            children: [
+              {name: 'calculation'},
+              {name: 'selection'}
+            ]
+          }
+        ]
+      },
+      {
+        name: 'TimeManagement',
+        children: [
+          {name: 'similarity_period'},
+          {name: 'ndays_before_forecast'},
+          {name: 'time_step'}
+        ]
       },
     ],
   },
+
 ];
 
 /** Flat node with expandable and level information */
@@ -40,6 +76,8 @@ interface ExampleFlatNode {
   styleUrls: ['./modelisation.component.scss']
 })
 export class ModelisationComponent {
+  selected = 'none';
+
   private _transformer = (node: FoodNode, level: number) => {
     return {
       expandable: !!node.children && node.children.length > 0,

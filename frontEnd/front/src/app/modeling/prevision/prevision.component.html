@@ -1,2 +1,9 @@
 <p>prevision works!</p>
-<mat-spinner color="primary"></mat-spinner>
+<div *ngIf="!show">
+  <p-button (click)="show = !show">Prediction</p-button>
+</div>
+
+<br>
+<div *ngIf="show">
+  <mat-spinner color="primary"></mat-spinner>
+</div>
