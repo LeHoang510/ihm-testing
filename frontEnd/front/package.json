@@ -1,4 +1,8 @@
 {
+  "engines": {
+    "node": "18.18.0",
+    "npm": "9.8.1"
+  },
   "name": "front",
   "version": "0.0.0",
   "scripts": {
