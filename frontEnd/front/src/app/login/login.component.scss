@@ -44,16 +44,21 @@ $jet: #333333ff;
     gap: 1rem;
 }
 
-button{
-  background-color: $font-green;
-  border-color: $font-green;
-  color: 35B8BEFF;
-  width: 100px;
-  border-radius: 5px;
+//button {
+//  background-color: $font-green;
+//  border-color: $font-green;
+//  color: 35B8BEFF;
+//  width: 100px;
+//  border-radius: 5px;
+//}
+.p-button{
+    background-color: $font-green;
+    border-color: $font-green;
+    color: $font-white;
 }
 
-button:hover{
+.p-button:hover{
     background-color: $font-white;
     border-color: $font-green;
-    color: $font-green;
+    color: $font-bold-green;
 }

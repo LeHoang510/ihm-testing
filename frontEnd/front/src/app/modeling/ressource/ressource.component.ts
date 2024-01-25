@@ -28,14 +28,20 @@ export class RessourceComponent implements OnInit {
           {
             label: "J0014010",
             data: ['467','576', '572', '79', '92',
-              '574', '573', '576'],
-            backgroundColor: 'blue'
+              '574', '573', '800'],
+            backgroundColor: '#fb7756'
           },
           {
             label: "J0121510",
             data: ['542', '542', '536', '327', '17',
               '0.00', '538', '541'],
-            backgroundColor: 'limegreen'
+            backgroundColor: '#fdfa66'
+          },
+          {
+            label: "J0144010",
+            data: ['243', '751', '645', '221', '31',
+              '500', '400', '123'],
+            backgroundColor: '#facd60'
           }
         ]
       },

@@ -27,3 +27,50 @@
   background: $font-green;
   color: $font-white;
 }
+
+.p-button{
+  background-color: $font-green;
+  border-color: $font-green;
+  color: $font-white;
+  margin: 5px;
+}
+
+.p-button:hover{
+  background-color: $font-white;
+  border-color: $font-green;
+  border: solid 1px;
+  color: $font-bold-green;
+}
+
+.p-button{
+  background-color: $font-green;
+  border-color: $font-green;
+  color: $font-white;
+  margin: 5px;
+}
+
+.p-button:hover{
+  background-color: $font-white;
+  border-color: $font-green;
+  border: solid 1px;
+  color: $font-bold-green;
+}
+
+
+.pg-button{
+  background-color: lightgrey;
+  border-color: lightgrey;
+  color: black;
+  margin: 5px;
+}
+
+.pg-button:hover{
+  background-color: $font-white;
+  border-color: lightgrey;
+  border: solid 1px;
+  color: grey;
+}
+
+.list-button{
+  float: right;
+}

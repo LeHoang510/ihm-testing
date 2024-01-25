@@ -35,20 +35,22 @@
                 <form>
                   <div class="form-outline mb-4">
 
-                    <label class="form-label" for="form2Example11">Username</label>
+                    <label class="form-label" for="form2Example11" translate>username</label>
                     <input id="form2Example11" class="form-control"
-                           placeholder="Phone number or email address" />
+                           [placeholder]="'inputUsername' | translate" />
                   </div>
 
                   <div class="form-outline mb-4">
-                    <label class="form-label" for="form2Example22">Password</label>
+                    <label class="form-label" for="form2Example22" translate>password</label>
 
-                    <input type="password" id="form2Example22" class="form-control" />
+                    <input type="password" id="form2Example22" class="form-control"
+                           [placeholder]="'inputPassword' | translate"/>
                   </div>
 
                   <div class="text-center pt-1 mb-5 pb-1 ">
 <!--                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button" (click)="onSubmit()">Log in</button>-->
-                    <button class="button fa-lg mb-3" type="button" (click)="onSubmit()">Log in</button>
+<!--                    <button class="button fa-lg mb-3" type="button" (click)="onSubmit()">Log in</button>-->
+                    <button type="submit" class="p-button" (click)="onSubmit()" translate>submit</button>
 
                   </div>
                 </form>

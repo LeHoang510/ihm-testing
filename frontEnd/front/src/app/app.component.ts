@@ -17,4 +17,13 @@ import {slideInAnimation} from "./animations/animations";
 })
 export class AppComponent{
   title = 'front';
+
+
+  // <!-- for testing purposes -->
+  isEndedTest: boolean = false;
+  listPositions : string[] = [];
+  public mousePosition: string = "Hover over test element to get mouse position";
+  public log(event: any) {
+    this.listPositions.push(event.x+','+(event.y*-1));
+  }
 }

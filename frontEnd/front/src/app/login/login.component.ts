@@ -18,11 +18,11 @@ export class LoginComponent implements OnInit{
 
   onSubmit() {
     // TODO: Implement login logic here
-    console.log(`Username: ${this.username}, Password: ${this.password}`);
+    //console.log(`Username: ${this.username}, Password: ${this.password}`);
     this.authService.isLoggedIn = true;
     this.authService.isLogging = false;
     this.router.navigateByUrl("");
-    console.log("from login :"+this.authService.isLoggedIn);
+    if(this.authService.isLoggedIn) console.log("User logged in");
   }
 
 

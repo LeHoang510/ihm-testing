@@ -18,11 +18,16 @@ const TREE_DATA: FoodNode[] = [
         children: [{ name: 'datasets',}]
       },
       {
-        type: false,
         name: 'ForecastInputs',
         children: [
-          {name: 'watershed_target_id'},
-          {name: 'forecast_horizon'}
+          {
+            name: 'watershed_target_id',
+            type: true,
+          },
+          {
+            name: 'forecast_horizon',
+            type: true,
+          }
         ]
       },
       {
@@ -31,22 +36,40 @@ const TREE_DATA: FoodNode[] = [
           {
             name: 'specific_discharge',
             children: [
-              {name: 'calculation'},
-              {name: 'selection'}
+              {
+                name: 'calculation',
+                type: false,
+              },
+              {
+                name: 'selection',
+                type: true,
+              }
             ]
           },
           {
             name: 'recharge',
             children: [
-              {name: 'calculation'},
-              {name: 'selection'}
+              {
+                name: 'calculation',
+                type: false,
+              },
+              {
+                name: 'selection',
+                type: true,
+              }
             ]
           },
           {
             name: 'runoff',
             children: [
-              {name: 'calculation'},
-              {name: 'selection'}
+              {
+                name: 'calculation',
+                type: false,
+              },
+              {
+                name: 'selection',
+                type: true,
+              }
             ]
           }
         ]
@@ -54,9 +77,18 @@ const TREE_DATA: FoodNode[] = [
       {
         name: 'TimeManagement',
         children: [
-          {name: 'similarity_period'},
-          {name: 'ndays_before_forecast'},
-          {name: 'time_step'}
+          {
+            name: 'similarity_period',
+            type: false,
+          },
+          {
+            name: 'ndays_before_forecast',
+            type: false,
+          },
+          {
+            name: 'time_step',
+            type: false,
+          }
         ]
       },
     ],
