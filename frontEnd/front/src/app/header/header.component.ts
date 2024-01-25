@@ -14,11 +14,7 @@ export class HeaderComponent implements OnInit{
   transLang : string[] =[];
   title : string = "modelingTitle";
   isLoggedIn! : boolean;
-  isMenuOpen = false;
 
-  toggleMenu(): void {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
   constructor(public translate: TranslateService, private router: Router, public authService : AuthService ){
     translate.setDefaultLang('FR');
     translate.addLangs(['EN', 'FR']);

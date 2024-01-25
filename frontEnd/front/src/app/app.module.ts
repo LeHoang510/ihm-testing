@@ -31,6 +31,12 @@ import { RessourceComponent } from './modeling/ressource/ressource.component';
 import { MapComponent } from './modeling/localisation/map/map.component';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { FooterComponent } from './footer/footer.component';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatTreeModule} from '@angular/material/tree';
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
+import {MatTableModule} from "@angular/material/table";
 
 // End of Hoang module
 export function HttpLoaderFactory(http: HttpClient) {
@@ -70,11 +76,17 @@ export function HttpLoaderFactory(http: HttpClient) {
     TabViewModule,
     TranslateModule.forRoot({
       loader: {
-      provide: TranslateLoader,
-      useFactory: HttpLoaderFactory,
-      deps: [HttpClient]
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
       }
-    })
+    }),
+    MatSliderModule,
+    MatProgressSpinnerModule,
+    MatTreeModule,
+    MatIconModule,
+    MatButtonModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
