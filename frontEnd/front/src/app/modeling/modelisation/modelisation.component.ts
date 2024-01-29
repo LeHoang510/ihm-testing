@@ -15,7 +15,7 @@ const TREE_DATA: FoodNode[] = [
     children: [
       {
         name: 'Files',
-        children: [{ name: 'datasets',}]
+        children: [{ name: 'datasets', type: false}]
       },
       {
         name: 'ForecastInputs',
@@ -144,4 +144,23 @@ export class ModelisationComponent {
 
     return `${value}`;
   }
+
+  getTypeForName(node: FoodNode, targetName: string): boolean | undefined {
+    if (node.name === targetName) {
+      return node.type;
+    } else if (node.children) {
+      for (const child of node.children) {
+        const result = this.getTypeForName(child, targetName);
+        if (result !== undefined) {
+          return result;
+        }
+      }
+    }
+    return undefined;
+  }
+  log(val: boolean | undefined){
+    //console.log(val);
+  }
+
+  protected readonly TREE_DATA = TREE_DATA;
 }

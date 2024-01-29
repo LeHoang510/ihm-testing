@@ -33,7 +33,7 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { FooterComponent } from './footer/footer.component';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatTreeModule} from '@angular/material/tree';
+import {MatTreeNestedDataSource, MatTreeModule} from '@angular/material/tree';
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatTableModule} from "@angular/material/table";
@@ -90,7 +90,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatButtonModule,
     MatTableModule,
     MatStepperModule,
-    MatSelectModule
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
