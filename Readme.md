@@ -24,6 +24,9 @@ Go to http://localhost:4200/ on a web Browser to see the result.
 The application is also deployed online for user testing. You can access it at the following link:
 > https://ihm-testing.netlify.app/
 
+Link to the demo:
+https://drive.google.com/file/d/10WbF8tCrQ9LMPD7AV3iT8IdcEj-jggfp/view?usp=sharing
+
 # Functionality
 
 
@@ -41,7 +44,7 @@ Including a Banner and a Navbar
 
 - **Banner**:
     - The banner's introduction message adjusts based on the user's login status. If the user is logged in, a personalized greeting or message is displayed. If the user is not logged in, a default message or prompt is shown.
-    - The toggle button enables users to switch between English and French languages. Clicking the toggle button updates the content on the banner in the selected language.
+    - The toggle button enables users to switch between English and French languages. Clicking the toggle button updates all the content of the website in the selected language.
     
 ![Capture d’écran du 2024-01-29 11-48-17](./images/IHM/banner.png)
 
